@@ -1,0 +1,54 @@
+.contact-cart {
+  background: #ffffff;
+  border-radius: 10px;
+  border: 0.5px solid #d1d5e0;
+  padding: 1.5rem;
+  max-width: 320px;
+}
+
+.contact-cart h1 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2B2740;
+  margin-bottom: 8px;
+}
+
+.contact-cart > p {
+  font-size: 13px;
+  color: #5C5F7A;
+  margin-bottom: 4px;
+}
+
+.contact-cart ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-cart li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+
+.contact-cart li a {
+  color: #2B2740;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.contact-cart li a:hover {
+  color: #8B5CF6;
+}
+
+.contact-cart li svg {
+  font-size: 18px !important;
+  color: #9CA3B8;
+  flex-shrink: 0;
+}
