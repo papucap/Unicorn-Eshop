@@ -1,32 +1,83 @@
 .page{
-    width: auto;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    font-family: Arial, Helvetica, sans-serif
+    gap: 40px; 
+    padding: 20px;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #2B2740;
 }
 .images{
-    width: 60%;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Obrázky vedle sebe v mřížce */
+    gap: 10px;
 
 }
 .img{
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: auto; 
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border: 1px solid #ECEEF2;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+.img:hover {
+    transform: scale(1.02);
 }
 
-.vyber-velikosti button{
-    padding: 5px;
+.info h1 {
+    margin: 0;
+}
+
+p {
+    color: #2B2740;
+}
+
+.vyber-velikosti {
+    margin: 20px 0;
+}
+
+.vyber-velikosti button {
+    padding: 12px 5px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
     background-color: #ECEEF2;
-    border-radius: 4px;
     margin: 2px;
 }
-.vyber-velikosti button:hover{
+
+.vyber-velikosti button:hover {
+    background-color: #8B5CF6;
+    color: #ECEEF2;
+}
+
+
+
+.pridat-do-kosiku button {
+    width: 100%;
+    padding: 16px;
+    background-color: #ECEEF2; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.pridat-do-kosiku button:hover:not(:disabled) {
     background-color: #8B5CF6;
 }
-.pridat-do-kosiku button{
+
+.pridat-do-kosiku button:disabled {
     background-color: #ECEEF2;
-    border-radius: 4px;
+    color: #9ca3af;
+    cursor: not-allowed;
 }
-.pridat-do-kosiku button:hover{
-    background-color: #8B5CF6;
-    border-radius: 4px;
-}
+
+
 

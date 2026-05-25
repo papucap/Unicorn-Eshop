@@ -1,29 +1,24 @@
 import { useState } from 'react';
+import './ProductInfo.css'
 
-const ProductInfo = () => {
+const ProductInfo = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState(null);
 
-  const product = {
-    brand: "Značka",
-    name: "Název",
-    price: "2 999 Kč",
-    sizes: ["38", "39", "40", "41", "42", "43", "44", "45"],
-    images: ["https://images.placeholder.com/600x600", "https://images.placeholder.com/600x600"]
-  };
+  if (!product) return null;
 
   return (
     <div className="page">
       
       <div className="images">
         {product.images.map((img, i) => (
-          <img key={i} src={img} alt="product" className="img" />
+          <img key={i} src={img} alt={product.name} className="img" />
         ))}
       </div>
 
       <div className="info">
         <h1>{product.brand}</h1>
         <h1>{product.name}</h1> <br />
-        <p>{product.price}</p>
+        <p>{product.price.toLocaleString()} Kč</p>
 
         <div className="vyber-velikosti">
           <p>Vyberte velikost (EU):</p>
@@ -32,13 +27,12 @@ const ProductInfo = () => {
               <button
                 key={size}
                 onClick={() => setSelectedSize(size)}
-                
               >
                 {size}
               </button>
             ))}
           </div>
-          <p>Vybraná velikost: {selectedSize}</p>
+          <p>Vybraná velikost: <strong>{selectedSize}</strong></p>
         </div>
 
         <div className='pridat-do-kosiku'>
@@ -54,3 +48,12 @@ const ProductInfo = () => {
 };
 
 export default ProductInfo;
+
+
+/*při zavolání se musí vložit informace o produktu
+<ProductInfo product={{brand: "Nike",
+    name: "Air Force 1 '07",
+    price: "2 999 ",
+    sizes: ["38", "39", "40", "41", "42", "43", "44", "45"],
+    images: ["https://images.com/600x600", "https://images.com/600x600"]}}></ProductInfo>
+    */
