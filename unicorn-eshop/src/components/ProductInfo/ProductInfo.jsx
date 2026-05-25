@@ -4,8 +4,8 @@ const ProductInfo = () => {
   const [selectedSize, setSelectedSize] = useState(null);
 
   const product = {
-    brand: "Nike",
-    name: "Air Force 1 '07",
+    brand: "Značka",
+    name: "Název",
     price: "2 999 Kč",
     sizes: ["38", "39", "40", "41", "42", "43", "44", "45"],
     images: ["https://images.placeholder.com/600x600", "https://images.placeholder.com/600x600"]
