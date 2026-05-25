@@ -1,0 +1,56 @@
+header {
+  background-color: #2B2740;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  color: white;
+}
+
+/* LEVÁ STRANA */
+.links ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+.links a:hover {
+  opacity: 0.6;
+}
+
+/* STŘED - LOGO */
+.logo img {
+  height: 40px;
+  object-fit: contain;
+}
+
+/* PRAVÁ STRANA */
+.more ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.more a {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  transition: 0.2s;
+}
+
+.more a:hover {
+  opacity: 0.6;
+}
