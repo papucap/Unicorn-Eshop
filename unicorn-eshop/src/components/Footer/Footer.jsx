@@ -1,0 +1,77 @@
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import XIcon from "@mui/icons-material/X";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+
+function Footer() {
+  return (
+    <>
+      <footer className="footer">
+        <div className="logo">
+          <img src="./src/assets/logo.png" alt="Unicorn Eshop Logo" />
+        </div>
+
+        <div className="info-links">
+          <ul className="info-links-list">
+            <li>
+              <a href="/">O nás</a>
+            </li>
+            <li>
+              <a href="/contact">Kontakt</a>
+            </li>
+            <li>
+              <a href="/about">Q&A</a>
+            </li>
+            <li>
+              <a href="/about">Reklamace</a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="shop-links">
+          <ul className="shop-links-list">
+            <li>
+              <a href="/">Oblečení</a>
+            </li>
+            <li>
+              <a href="/">Boty</a>
+            </li>
+            <li>
+              <a href="/">Doplňky</a>
+            </li>
+            <li>
+              <a href="/">Novinky</a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="socials-links">
+          <ul className="socials-links-list">
+            <li>
+              <a href="https://www.instagram.com/" target="_blank">
+                <InstagramIcon />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/" target="_blank">
+                <YouTubeIcon />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.x.com/" target="_blank">
+                <XIcon />
+              </a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/" target="_blank">
+                <FacebookIcon />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </>
+  );
+}
+
+export default Footer;
