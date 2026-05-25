@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const ProductPage = () => {
+const ProductInfo = () => {
   const [selectedSize, setSelectedSize] = useState(null);
 
   const product = {
@@ -64,4 +64,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export default ProductInfo;
