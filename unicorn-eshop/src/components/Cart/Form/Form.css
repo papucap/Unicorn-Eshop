@@ -1,0 +1,130 @@
+:root {
+  --c-bg:     #ECEEF2;
+  --c-muted:  #9CA3B8;
+  --c-mid:    #5C5F7A;
+  --c-dark:   #2B2740;
+  --c-accent: #8B5CF6;
+}
+
+.delivery-heading {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-dark);
+  margin-bottom: 1.25rem;
+}
+
+.delivery-card {
+  background: #fff;
+  border-radius: 10px;
+  border: 0.5px solid #d1d5e0;
+  padding: 1.5rem;
+}
+
+.login-banner {
+  background: var(--c-bg);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-banner strong {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-dark);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.login-banner p { font-size: 13px; color: var(--c-mid); }
+.login-banner a { color: var(--c-dark); text-decoration: underline; }
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field label { font-size: 13px; color: var(--c-muted); }
+
+.field input[type="text"],
+.field input[type="email"] {
+  height: 40px;
+  border: 0.5px solid #d1d5e0;
+  border-radius: 6px;
+  padding: 0 10px;
+  font-size: 14px;
+  color: var(--c-dark);
+  outline: none;
+}
+
+.field input:focus {
+  border-color: var(--c-accent);
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.12);
+}
+
+.phone-wrap {
+  display: flex;
+  align-items: center;
+  border: 0.5px solid #d1d5e0;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 40px;
+}
+
+.phone-prefix {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 10px;
+  border-right: 0.5px solid #d1d5e0;
+  font-size: 13px;
+  color: var(--c-dark);
+  flex-shrink: 0;
+}
+
+.phone-wrap input[type="tel"] {
+  flex: 1;
+  border: none;
+  padding: 0 10px;
+  font-size: 14px;
+  color: var(--c-dark);
+  outline: none;
+  height: 100%;
+}
+
+.checks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 1rem 0;
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--c-dark);
+  cursor: pointer;
+}
+
+.check-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--c-accent);
+  flex-shrink: 0;
+}
+
+.terms { font-size: 12px; color: var(--c-muted); margin-top: 0.5rem; }
+.terms a { color: var(--c-dark); text-decoration: underline; }
