@@ -2,6 +2,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import XIcon from "@mui/icons-material/X";
 import YouTubeIcon from "@mui/icons-material/YouTube";
+import "./Footer.css";
 
 function Footer() {
   return (
@@ -12,6 +13,8 @@ function Footer() {
         </div>
 
         <div className="info-links">
+          <h3>Informace</h3>
+
           <ul className="info-links-list">
             <li>
               <a href="/">O nás</a>
@@ -29,6 +32,7 @@ function Footer() {
         </div>
 
         <div className="shop-links">
+          <h3>Obchod</h3>
           <ul className="shop-links-list">
             <li>
               <a href="/">Oblečení</a>
@@ -68,6 +72,10 @@ function Footer() {
               </a>
             </li>
           </ul>
+        </div>
+
+        <div className="copyright">
+          <p>© 2024 Unicorn Eshop. Všechna práva vyhrazena.</p>
         </div>
       </footer>
     </>
