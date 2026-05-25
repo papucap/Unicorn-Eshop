@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Steps from "./components/Cart/Steps/Steps";
 import "./App.css";
 
 function App() {
@@ -6,6 +7,8 @@ function App() {
 
   return (
     <>
+      <Steps />
+
     </>
   );
 }
