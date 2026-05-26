@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavBar.css";
-function NavBar() {
+function NavBar({onSearch}) {
   return (
     <>
       <div className="nav-container">
@@ -30,6 +30,7 @@ function NavBar() {
               type="text"
               placeholder="Hledat..."
               className="search-input"
+              onChange={(e) => onSearch(e.target.value)}
             />
           </div>
         </div>
