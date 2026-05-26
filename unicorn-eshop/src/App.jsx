@@ -1,13 +1,24 @@
-import { useState } from "react";
-import "./App.css";
-import Contact from "./components/Contact/Contact";
+import { useState, useEffect } from 'react';
+import NavBar from './components/NavBar/NavBar';
+import { getAllProducts } from './api/api';
+
 function App() {
-  const [count, setCount] = useState(0);
+  const [products, setProducts] = useState([]);
+  const [query, setQuery] = useState('');
+
+  useEffect(() => {
+    getAllProducts().then(setProducts);
+  }, []);
+
+  const filtered = products.filter(p =>
+    p.name.toLowerCase().includes(query.toLowerCase()) ||
+    p.brand.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
-    <>
-      <Contact />
-    </>
+    <div>
+      <NavBar onSearch={setQuery} />
+    </div>
   );
 }
 
