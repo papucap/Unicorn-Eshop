@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from 'react-router-dom';
 import "./NavBar.css";
 function NavBar({onSearch}) {
   return (
@@ -8,19 +8,19 @@ function NavBar({onSearch}) {
           <nav className="navbar">
             <ul className="nav-links">
               <li>
-                <a href="/">NOVINKY</a>
+                <Link to="/">NOVINKY</Link>
               </li>
               <li>
-                <a href="/products">BOTY</a>
+                <Link to="/products">BOTY</Link>
               </li>
               <li>
-                <a href="/contact">OBLEČENÍ</a>
+                <Link to="/contact">OBLEČENÍ</Link>
               </li>
               <li>
-                <a href="/about">DOPLŇKY</a>
+                <Link to="/about">DOPLŇKY</Link>
               </li>
               <li>
-                <a href="/about">INSPIRACE</a>
+                <Link to="/about">INSPIRACE</Link>
               </li>
             </ul>
           </nav>
