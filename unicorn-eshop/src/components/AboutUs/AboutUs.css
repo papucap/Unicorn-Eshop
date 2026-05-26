@@ -1,0 +1,18 @@
+.logo {
+  background-color: #2B2740;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  color: #2B2740;
+  background-color: #ECEEF2;
+  height: 120px;
+  
+}
+
+.shopPhotosContainer {
+  background-color: #2B2740;
+  color: #ECEEF2;
+}

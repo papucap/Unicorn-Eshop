@@ -1,43 +1,40 @@
 .newsSection {
-  padding: 50px 30px; /* Zmenšený padding celé sekce */
+  padding: 50px 30px;
   background-color: #2B2740;
 }
 
 #nadpis {
-  font-size: 28px; /* Zmenšeno ze 42px pro jemnější vzhled */
+  font-size: 28px; 
   letter-spacing: 2px;
   color: #ECEEF2;
-  margin: 0 0 25px 0; /* Menší mezera pod nadpisem */
+  margin: 0 0 25px 0; 
   text-align: left;
   font-weight: 800;
 }
 
-/* CONTAINER */
 .newsContainer {
   display: flex;
-  gap: 20px; /* Užší mezera mezi kartami */
+  gap: 20px; 
   width: 100%;
 }
 
-/* KARTA */
 .news {
   /* Polovina šířky minus polovina 20px mezery */
   width: calc(50% - 10px); 
   background: #5C5F7A;
-  border-radius: 14px; /* Jemnější zaoblení */
+  border-radius: 14px;
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .news:hover {
-  transform: translateY(-5px); /* Jemnější zdvih při hoveru */
+  transform: translateY(-5px); 
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
-/* IMAGES BOX */
 .images {
-  height: 300px; /* Výrazně sníženo z 380px, aby karty byly kompaktní */
+  height: 300px; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,13 +52,13 @@
   transform: scale(1.03);
 }
 
-/* INFO BLOK */
+
 .info {
-  padding: 20px; /* Menší vnitřní okraj textu */
+  padding: 20px;
 }
 
 .news-title {
-  font-size: 20px; /* Menší, čistší písmo */
+  font-size: 20px;
   font-weight: 700;
   color: #ECEEF2;
   margin: 0 0 6px 0;
@@ -69,7 +66,7 @@
 }
 
 .news-content {
-  font-size: 16px; /* Drobnější text popisku */
+  font-size: 16px;
   color: #9CA3B8;
   line-height: 1.5;
   margin: 0;
