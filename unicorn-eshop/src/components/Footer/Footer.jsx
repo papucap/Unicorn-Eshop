@@ -3,6 +3,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import XIcon from "@mui/icons-material/X";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import "./Footer.css";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -17,10 +18,10 @@ function Footer() {
 
           <ul className="info-links-list">
             <li>
-              <a href="/">O nás</a>
+              <Link to="/about">O nás</Link>
             </li>
             <li>
-              <a href="/contact">Kontakt</a>
+              <Link to="/contact">Kontakt</Link>
             </li>
             <li>
               <a href="/about">Q&A</a>
