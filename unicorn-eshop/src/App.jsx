@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import { getAllProducts } from "./api/api";
-import News from "./components/MainPage/News/News";
-import AboutUs from "./components/AboutUs/AboutUs";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -21,7 +19,6 @@ function App() {
   return (
     <div>
       <NavBar onSearch={setQuery} />
-      <AboutUs />
     </div>
   );
 }

@@ -1,18 +1,109 @@
-.logo {
+
+.logo-section {
   background-color: #2B2740;
-  height: 300px;
+  height: 250px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-.logo img {
-  color: #2B2740;
-  background-color: #ECEEF2;
-  height: 120px;
-  
+.logo-img {
+  height: 90px;
+  object-fit: contain;
+}
+
+.socialsContainer {
+  background-color: #5C5F7A;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+#socialTitle {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ECEEF2;
+  letter-spacing: 2px;
+  margin: 0 0 10px 0;
+}
+
+#socialsText {
+  font-size: 16px;
+  font-weight: 400;
+  color: #9CA3B8;
+  letter-spacing: 1px;
+  margin: 0 0 30px 0;
+}
+
+.socialsLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.socialsLinks a {
+  color: #ECEEF2;
+  background-color: #2B2740;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.25s ease;
+}
+
+.socialsLinks a:hover {
+  background-color: #8B5CF6;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(139, 92, 246, 0.4);
+}
+
+.socialsLinks svg {
+  font-size: 24px; 
 }
 
 .shopPhotosContainer {
   background-color: #2B2740;
+  padding: 80px 40px;
+  text-align: center;
+}
+
+#shopTitle {
+  font-size: 32px;
+  font-weight: 800;
   color: #ECEEF2;
+  letter-spacing: 2px;
+  margin: 0 0 8px 0;
+}
+
+#shopText {
+  font-size: 16px;
+  color: #9CA3B8;
+  letter-spacing: 1px;
+  margin: 0 0 40px 0;
+}
+
+.shopPhotos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.shopPhotos img {
+  width: calc(33.333% - 14px);
+  height: 280px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+}
+
+.shopPhotos img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
