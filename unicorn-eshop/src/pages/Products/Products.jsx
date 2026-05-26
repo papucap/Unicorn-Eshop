@@ -6,11 +6,11 @@ import { getAllProducts } from "../../api/api";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-
 export default function Products() {
   const [selectedProduct, setSelectedProduct] = React.useState(null);
   const [products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
+  const [query, setQuery] = React.useState('');
 
   React.useEffect(() => {
     getAllProducts()
@@ -18,21 +18,26 @@ export default function Products() {
       .finally(() => setLoading(false));
   }, []);
 
+  const filtered = products.filter(p =>
+    p.name.toLowerCase().includes(query.toLowerCase()) ||
+    p.brand.toLowerCase().includes(query.toLowerCase())
+  );
+
   return (
     <div>
-        <Header />
-      <NavBar />
+      <Header />
+      <NavBar onSearch={setQuery} />
       {selectedProduct ? (
         <ProductInfo product={selectedProduct} />
       ) : loading ? (
         <p>Načítám produkty...</p>
       ) : (
         <ProductPage
-          products={products}
+          products={filtered}
           onProductClick={setSelectedProduct}
         />
       )}
-        <Footer />
+      <Footer />
     </div>
   );
 }
