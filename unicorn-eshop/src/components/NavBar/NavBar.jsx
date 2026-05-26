@@ -20,7 +20,7 @@ function NavBar({onSearch}) {
                 <Link to="/about">DOPLŇKY</Link>
               </li>
               <li>
-                <Link to="/about">INSPIRACE</Link>
+                <Link to="/about">O NÁS</Link>
               </li>
             </ul>
           </nav>
