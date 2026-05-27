@@ -48,12 +48,12 @@ const PRODUCTS_DATA = [
   },
 ];
 
-function ProductBox() {
+function ProductBox({title = "Produkty"}) {
   return (
     <>
       <div className="productSection">
         <div className="productSection-top">
-          <h1>NEJNOVĚJŠÍ PRODUKTY</h1>
+          <h1>{title}</h1>
 
           <button
             className="show-all-btn"
