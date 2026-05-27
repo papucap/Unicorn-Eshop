@@ -1,5 +1,6 @@
 import "./ProductBox.css";
 
+const ProductTitle = "Boty";
 const PRODUCTS_DATA = [
   {
     id: 1,
@@ -53,7 +54,7 @@ function ProductBox() {
     <>
       <div className="productSection">
         <div className="productSection-top">
-          <h1>NEJNOVĚJŠÍ PRODUKTY</h1>
+          <h1>{ProductTitle}</h1>
 
           <button
             className="show-all-btn"
