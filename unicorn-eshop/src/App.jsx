@@ -3,6 +3,7 @@ import Products from './pages/Products/Products';
 import MainPage from './pages/MainPage/MainPage';
 import AboutUs from './pages/AboutUs/AboutUs';
 import ContactPage from './pages/Contact/Contactpage';
+import Cart from './pages/Cart/Cart'
 import "./App.css"
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route path="/products/:category" element={<Products />} />
       <Route path = "/about" element = {<AboutUs />} />
       <Route path = "/contact" element ={<ContactPage />} />
+      <Route path = "/cart" element = {<Cart />} />
     </Routes>
     
   );
