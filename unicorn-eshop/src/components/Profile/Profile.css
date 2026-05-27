@@ -4,30 +4,26 @@
 }
 .udaje{
     border: 2px solid #ECEEF2;
+    border-radius: 6px;
     padding: 20px;
     display: inline-block;
     text-align: left;
     gap: 20px;
     width: 300px;
 }
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 300px;
-    margin: 0 auto ;
-}
-.out{
+.profile-out{
+    padding: 10px;
     background-color: #2B2740;
     color: #ECEEF2;
     border: none;
-    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
     float: right;
-    
 }
-
-.out:hover{
+.profile-out:hover{
     background-color: #8B5CF6;
     color: #ECEEF2;
 }
+
+

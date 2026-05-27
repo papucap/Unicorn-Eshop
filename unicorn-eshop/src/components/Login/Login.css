@@ -3,22 +3,34 @@
     text-align: center ;
 }
 
-.login form {
+.login-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
     max-width: 300px;
     margin: 0 auto ;
 }
-.login form input{
-    padding: 5px;
+.login-form input{
+    padding: 10px;
+    border: 1px solid #ECEEF2;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
 }
-.submit{
+.login-form input:focus{
+  border-color: #8B5CF6;
+}
+
+.login-submit{
+    padding: 10px;
     background-color: #2B2740;
     color: #ECEEF2;
-    padding: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
 }
-.submit:hover{
+.login-submit:hover{
     background-color: #8B5CF6;
     color: #ECEEF2;
 }

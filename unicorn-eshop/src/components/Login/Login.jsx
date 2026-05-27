@@ -25,10 +25,10 @@ export default function Login() {
     <div>
       <div className='login'>
         <h2>Přihlášení</h2>
-        <form onSubmit={handleLogin}>
+        <form className='login-form' onSubmit={handleLogin}>
           <input type="email" placeholder="Email" onChange={e => setEmail(e.target.value)} required />
           <input type="password" placeholder="Heslo" onChange={e => setPassword(e.target.value)} required />
-          <button className='submit' type="submit">Přihlásit se</button>
+          <button className='login-submit' type="submit">Přihlásit se</button>
         </form>
         <p>Nemáte účet? <Link to="/register">Zaregistrujte se</Link></p>
       </div>

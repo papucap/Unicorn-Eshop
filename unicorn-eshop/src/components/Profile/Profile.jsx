@@ -27,7 +27,7 @@ export default function Profile() {
           <p><strong>Email:</strong> {user.email}</p>
           <p><strong>Heslo:</strong> {user.password}</p>
           <br></br>
-          <button className='out' onClick={logout} >Odhlásit se</button>
+          <button className='profile-out' onClick={logout} >Odhlásit se</button>
         </div>
       </div>
     </div>
