@@ -91,7 +91,7 @@ const List = ({ cartItems, onRemove, onChangeQty, onNext, onBack, readOnly, form
             </button>
           )}
           {readOnly && (
-            <button className="checkout-btn">
+            <button className="checkout-btn" onClick={onNext}>
               Potvrdit objednávku
             </button>
           )}

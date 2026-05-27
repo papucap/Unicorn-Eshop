@@ -8,6 +8,7 @@ import Form from "../../components/Cart/Form/Form";
 import List from "../../components/Cart/List/List";
 import ShippingPayment from "../../components/Cart/ShippingPayment/ShippingPayment";
 import { useCart } from "../../context/CartContext";
+import QR from "../../components/Cart/QR/QR";
 
 export default function CartPage() {
   const { cartItems, removeFromCart, changeQty } = useCart();
@@ -69,8 +70,14 @@ export default function CartPage() {
           shipping={shipping}
           payment={payment}
           onBack={() => setCurrentStep(3)}
+          onNext={() => setCurrentStep(5)}
         />
       )}
+      {currentStep === 5 && (
+        <QR 
+        onBack={() => setCurrentStep(3)} 
+        />
+        )}
 
       <Footer />
     </>
