@@ -1,18 +1,18 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Profile.css'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./Profile.css";
 
 export default function Profile() {
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('currentUser'));
+  const user = JSON.parse(localStorage.getItem("currentUser"));
 
   React.useEffect(() => {
-    if (!user) navigate('/login');
+    if (!user) navigate("/login");
   }, [user, navigate]);
 
   const logout = () => {
-    localStorage.removeItem('currentUser');
-    navigate('/');
+    localStorage.removeItem("currentUser");
+    navigate("/");
   };
 
   if (!user) return null;
