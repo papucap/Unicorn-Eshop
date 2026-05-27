@@ -12,7 +12,7 @@ export default function Products() {
   const [selectedProduct, setSelectedProduct] = React.useState(null);
   const [products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
-  const [query, setQuery] = React.useState('');
+  const [query, setQuery] = React.useState("");
 
   React.useEffect(() => {
     getAllProducts()
@@ -20,20 +20,22 @@ export default function Products() {
       .finally(() => setLoading(false));
   }, []);
 
-  const filtered = products.filter(p =>{
-    const search = p.name.toLowerCase().includes(query.toLowerCase()) ||
-      p.brand.toLowerCase().includes(query.toLowerCase())
-  
+  const filtered = products.filter((p) => {
+    const search =
+      p.name.toLowerCase().includes(query.toLowerCase()) ||
+      p.brand.toLowerCase().includes(query.toLowerCase());
+
     if (category === "men") {
       return search && p.category === "men's clothing";
     }
     if (category === "women") {
       return search && p.category === "women's clothing";
     }
-    
+    if (category === "accessories") {
+      return search && p.category === "jewelery";
+    }
     return search; // Pokud není vybraná kategorie zobrazí se vše
-
-    });
+  });
 
   return (
     <div>
@@ -44,10 +46,7 @@ export default function Products() {
       ) : loading ? (
         <p>Načítám produkty...</p>
       ) : (
-        <ProductPage
-          products={filtered}
-          onProductClick={setSelectedProduct}
-        />
+        <ProductPage products={filtered} onProductClick={setSelectedProduct} />
       )}
       <Footer />
     </div>
