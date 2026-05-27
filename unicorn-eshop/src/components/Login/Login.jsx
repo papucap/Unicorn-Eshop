@@ -28,7 +28,7 @@ export default function Login() {
         <form onSubmit={handleLogin}>
           <input type="email" placeholder="Email" onChange={e => setEmail(e.target.value)} required />
           <input type="password" placeholder="Heslo" onChange={e => setPassword(e.target.value)} required />
-          <button type="submit">Přihlásit se</button>
+          <button className='submit' type="submit">Přihlásit se</button>
         </form>
         <p>Nemáte účet? <Link to="/register">Zaregistrujte se</Link></p>
       </div>

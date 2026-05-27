@@ -41,7 +41,7 @@ export default function Register() {
           <input type="email" placeholder="Email" onChange={e => setFormData({...formData, email: e.target.value})} required />
           <input type="password" placeholder="Heslo" onChange={e => setFormData({...formData, password: e.target.value})} required />
           <input type="password" placeholder="Potvrďte heslo" onChange={e => setFormData({...formData, confirmPassword: e.target.value})} required />
-          <button type="submit">Zaregistrovat se</button>
+          <button className='submit' type="submit">Zaregistrovat se</button>
         </form>
         <p>Máte účet? <Link to="/login">Přihlaste se</Link></p>
       </div>

@@ -20,13 +20,14 @@ export default function Profile() {
   return (
     <div>
       <div className='profil'>
-        <h1>Můj profil</h1>
+        <h1>Vaše údaje</h1>
         <div className='udaje'>
           <p><strong>Jméno:</strong> {user.name}</p>
           <p><strong>Příjmení:</strong> {user.lastName}</p>
           <p><strong>Email:</strong> {user.email}</p>
-          <p><strong>Heslo:</strong> {user.password}</p><br></br>
-          <button onClick={logout} >Odhlásit se</button>
+          <p><strong>Heslo:</strong> {user.password}</p>
+          <br></br>
+          <button className='out' onClick={logout} >Odhlásit se</button>
         </div>
       </div>
     </div>

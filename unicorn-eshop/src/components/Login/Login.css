@@ -3,15 +3,22 @@
     text-align: center ;
 }
 
-form {
+.login form {
     display: flex;
     flex-direction: column;
     gap: 20px;
     max-width: 300px;
     margin: 0 auto ;
 }
-
-button:hover{
+.login form input{
+    padding: 5px;
+}
+.submit{
+    background-color: #2B2740;
+    color: #ECEEF2;
+    padding: 5px;
+}
+.submit:hover{
     background-color: #8B5CF6;
     color: #ECEEF2;
 }
