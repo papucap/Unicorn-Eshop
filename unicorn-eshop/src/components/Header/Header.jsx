@@ -4,13 +4,18 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import "./Header.css";
 
-function Header({ lang = "cs" }) {
+function Header({ lang = "cs", setLang }) {
   const menuLinks = [
     { label: { cs: "Vše", en: "All" }, url: "/products" },
     { label: { cs: "Muži", en: "Men" }, url: "/products/men" },
     { label: { cs: "Ženy", en: "Women" }, url: "/products/women" },
     { label: { cs: "Děti", en: "Kids" }, url: "/about" },
   ];
+
+  const langToggleText = {
+    cs: "EN",
+    en: "CZ",
+  };
 
   return (
     <header>
@@ -44,6 +49,15 @@ function Header({ lang = "cs" }) {
             <a href="/likes">
               <FavoriteBorderIcon />
             </a>
+          </li>
+
+          <li>
+            <button
+              className="lang-switcher-btn"
+              onClick={() => setLang(lang === "cs" ? "en" : "cs")}
+            >
+              {langToggleText[lang]}
+            </button>
           </li>
         </ul>
       </div>
