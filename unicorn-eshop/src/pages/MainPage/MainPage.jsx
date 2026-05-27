@@ -9,7 +9,7 @@ import News from "../../components/MainPage/News/News";
 
 import { getAllProducts } from "../../api/api";
 
-export default function MainPage() {
+export default function MainPage({ lang, setLang }) {
   const [products, setProducts] = useState([]);
 
   // Načtení dat z FakeStore API
@@ -32,17 +32,21 @@ export default function MainPage() {
 
   return (
     <div>
-      <Header />
-      <NavBar />
-      <Slider />
+      <Header lang={lang} setLang={setLang} />
+      <NavBar lang={lang} />
+      <Slider lang={lang} />
 
-      <ProductBox title="NEJNOVĚJŠÍ PRODUKTY" products={newestProducts} />
+      <ProductBox
+        lang={lang}
+        title="NEJNOVĚJŠÍ PRODUKTY"
+        products={newestProducts}
+      />
 
-      <News />
+      <News lang={lang} />
 
-      <ProductBox title="TRENDY" products={trendyProducts} />
+      <ProductBox lang={lang} title="TRENDY" products={trendyProducts} />
 
-      <Footer />
+      <Footer lang={lang} />
     </div>
   );
 }
