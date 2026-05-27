@@ -9,9 +9,11 @@ import List from "../../components/Cart/List/List";
 import ShippingPayment from "../../components/Cart/ShippingPayment/ShippingPayment";
 import { useCart } from "../../context/CartContext";
 import QR from "../../components/Cart/QR/QR";
+import { useNavigate } from "react-router-dom";
 
 export default function CartPage() {
   const { cartItems, removeFromCart, changeQty } = useCart();
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -70,14 +72,9 @@ export default function CartPage() {
           shipping={shipping}
           payment={payment}
           onBack={() => setCurrentStep(3)}
-          onNext={() => setCurrentStep(5)}
+          onNext={() => navigate("/cart/QR")}
         />
       )}
-      {currentStep === 5 && (
-        <QR 
-        onBack={() => setCurrentStep(3)} 
-        />
-        )}
 
       <Footer />
     </>
