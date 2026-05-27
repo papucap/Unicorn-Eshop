@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -35,9 +36,9 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="/cart">
+            <Link to="/cart">
               <LocalMallIcon />
-            </a>
+            </Link>
           </li>
           <li>
             <a href="/likes">
