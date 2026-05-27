@@ -79,5 +79,26 @@ p {
     cursor: not-allowed;
 }
 
+.cart-msg {
+  margin-top: 8px;
+  font-size: 13px;
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.cart-msg.success {
+  background: #f0fdf4;
+  color: #15803d;
+  border: 0.5px solid #bbf7d0;
+}
+
+.cart-msg.error {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 0.5px solid #fecaca;
+}
+
+
+
 
 

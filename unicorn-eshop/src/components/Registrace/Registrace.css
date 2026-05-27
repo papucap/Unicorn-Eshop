@@ -1,17 +1,39 @@
-.registrace{ 
-    padding: 100px;
-    text-align: center ;
+.registrace {
+  padding: 100px;
+  text-align: center;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    max-width: 300px;
-    margin: 0 auto ;
+.registrace-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
-button:hover{
-    background-color: #8B5CF6;
-    color: #ECEEF2;
+.registrace-form input {
+  padding: 10px;
+  border: 1px solid #ECEEF2;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.registrace-form input:focus {
+  border-color: #8B5CF6;
+}
+
+.registrace-submit-btn {
+  padding: 10px;
+  background-color: #2B2740;
+  color: #ECEEF2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.registrace-submit-btn:hover {
+  background-color: #8B5CF6;
+  color: #ECEEF2;
 }

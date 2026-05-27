@@ -1,32 +1,43 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Profile.css'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import "./Profile.css";
 
 export default function Profile() {
   const navigate = useNavigate();
-  const user = JSON.parse(localStorage.getItem('currentUser'));
+  const user = JSON.parse(localStorage.getItem("currentUser"));
 
   React.useEffect(() => {
-    if (!user) navigate('/login');
+    if (!user) navigate("/login");
   }, [user, navigate]);
 
   const logout = () => {
-    localStorage.removeItem('currentUser');
-    navigate('/');
+    localStorage.removeItem("currentUser");
+    navigate("/");
   };
 
   if (!user) return null;
 
   return (
     <div>
-      <div className='profil'>
+      <div className="profil">
         <h1>Můj profil</h1>
-        <div className='udaje'>
-          <p><strong>Jméno:</strong> {user.name}</p>
-          <p><strong>Příjmení:</strong> {user.lastName}</p>
-          <p><strong>Email:</strong> {user.email}</p>
-          <p><strong>Heslo:</strong> {user.password}</p><br></br>
-          <button onClick={logout} >Odhlásit se</button>
+        <div className="profil-udaje">
+          <p>
+            <strong>Jméno:</strong> {user.name}
+          </p>
+          <p>
+            <strong>Příjmení:</strong> {user.lastName}
+          </p>
+          <p>
+            <strong>Email:</strong> {user.email}
+          </p>
+          <p>
+            <strong>Heslo:</strong> {user.password}
+          </p>
+          <br />
+          <button className="profil-logout-btn" onClick={logout}>
+            Odhlásit se
+          </button>
         </div>
       </div>
     </div>
