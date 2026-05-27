@@ -5,7 +5,7 @@ export default function QR() {
     return(
         <>
         <button><Link to={"/"}>Zpet</Link></button>
-        <img src="../../public/QR.png"></img>
+        <img src="../src/assets/QR.png"></img>
         </>
     )
 }
