@@ -1,54 +1,7 @@
 import "./ProductBox.css";
 
-const PRODUCTS_DATA = [
-  {
-    id: 1,
-    brand: "NIKE",
-    name: "AirMax 3",
-    price: 3555,
-    images: [
-      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
-    ],
-  },
-  {
-    id: 2,
-    brand: "NIKE",
-    name: "AirMax 3",
-    price: 3555,
-    images: [
-      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
-    ],
-  },
-  {
-    id: 3,
-    brand: "NIKE",
-    name: "AirMax 3",
-    price: 3555,
-    images: [
-      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
-    ],
-  },
-  {
-    id: 4,
-    brand: "NIKE",
-    name: "AirMax 3",
-    price: 3555,
-    images: [
-      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
-    ],
-  },
-  {
-    id: 5,
-    brand: "NIKE",
-    name: "AirMax 3",
-    price: 3555,
-    images: [
-      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
-    ],
-  },
-];
-
-function ProductBox({ title = "Produkty" }) {
+// Přidali jsme 'products = []' jako prop
+function ProductBox({ title = "Produkty", products = [] }) {
   return (
     <>
       <div className="productSection">
@@ -64,7 +17,8 @@ function ProductBox({ title = "Produkty" }) {
         </div>
 
         <div className="productContainer">
-          {PRODUCTS_DATA.map((product) => (
+          {/* Teď mapujeme produkty, které přišly přes props */}
+          {products.map((product) => (
             <div className="product" key={product.id}>
               <div className="images-product">
                 {product.images.map((img, i) => (
