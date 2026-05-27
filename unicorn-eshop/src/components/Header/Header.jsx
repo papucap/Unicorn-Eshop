@@ -9,13 +9,13 @@ function Header() {
       <div className="links">
         <ul>
           <li>
-            <a href="/">Vše</a>
+            <a href="/products">Vše</a>
           </li>
           <li>
-            <a href="/products">Muži</a>
+            <a href="/products/men">Muži</a>
           </li>
           <li>
-            <a href="/contact">Ženy</a>
+            <a href="/products/women">Ženy</a>
           </li>
           <li>
             <a href="/about">Děti</a>
