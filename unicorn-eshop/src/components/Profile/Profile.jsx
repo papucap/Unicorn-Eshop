@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Profile.css'
 
 export default function Profile() {
   const navigate = useNavigate();
@@ -18,12 +19,14 @@ export default function Profile() {
 
   return (
     <div>
-      <div style={{ padding: '50px', textAlign: 'center' }}>
+      <div className='profil'>
         <h1>Můj profil</h1>
-        <div style={{ border: '1px solid #ECEEF2', padding: '20px', display: 'inline-block' }}>
+        <div className='udaje'>
           <p><strong>Jméno:</strong> {user.name}</p>
+          <p><strong>Příjmení:</strong> {user.lastName}</p>
           <p><strong>Email:</strong> {user.email}</p>
-          <button onClick={logout} style={{ backgroundColor: 'red', color: 'white', border: 'none', padding: '10px' }}>Odhlásit se</button>
+          <p><strong>Heslo:</strong> {user.password}</p><br></br>
+          <button onClick={logout} >Odhlásit se</button>
         </div>
       </div>
     </div>

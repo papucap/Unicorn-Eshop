@@ -1,0 +1,17 @@
+.registrace{ 
+    padding: 100px;
+    text-align: center ;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 300px;
+    margin: 0 auto ;
+}
+
+button:hover{
+    background-color: #8B5CF6;
+    color: #ECEEF2;
+}

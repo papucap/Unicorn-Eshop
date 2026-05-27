@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import './Login.css'
 
 
 export default function Login() {
@@ -22,9 +23,9 @@ export default function Login() {
 
   return (
     <div>
-      <div style={{ padding: '50px', textAlign: 'center' }}>
+      <div className='login'>
         <h2>Přihlášení</h2>
-        <form onSubmit={handleLogin} style={{ display: 'flex', flexDirection: 'column', gap: '10px', maxWidth: '300px', margin: '0 auto' }}>
+        <form onSubmit={handleLogin}>
           <input type="email" placeholder="Email" onChange={e => setEmail(e.target.value)} required />
           <input type="password" placeholder="Heslo" onChange={e => setPassword(e.target.value)} required />
           <button type="submit">Přihlásit se</button>

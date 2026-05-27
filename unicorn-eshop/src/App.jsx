@@ -4,10 +4,11 @@ import MainPage from './pages/MainPage/MainPage';
 import AboutUs from './pages/AboutUs/AboutUs';
 import ContactPage from './pages/Contact/Contactpage';
 import Cart from './pages/Cart/Cart'
-import "./App.css"
 import ProfilePage from './pages/Profile/ProfilePage';
 import LoginPage from './pages/Login/LoginPage';
 import RegisterPage from './pages/Registrace/RegistracePage';
+import "./App.css"
+
 
 
 
