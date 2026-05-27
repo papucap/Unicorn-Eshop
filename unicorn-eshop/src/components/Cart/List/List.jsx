@@ -36,11 +36,11 @@ const List = ({ cartItems, onRemove, onChangeQty, onNext, onBack, readOnly, form
           </div>
           {!readOnly && (
             <div className="cart-item-actions">
-              <button className="remove" onClick={() => onRemove(item.id)}>✕</button>
+              <button onClick={() => onRemove(item.id, item.size)}>✕</button>
               <div className="qty">
-                <button onClick={() => onChangeQty(item.id, -1)}>−</button>
+                <button onClick={() => onChangeQty(item.id, item.size, -1)}>−</button>
                 <span>{item.qty}</span>
-                <button onClick={() => onChangeQty(item.id, +1)}>+</button>
+                <button onClick={() => onChangeQty(item.id, item.size, +1)}>+</button>
               </div>
             </div>
           )}
