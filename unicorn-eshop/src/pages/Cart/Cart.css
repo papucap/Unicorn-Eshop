@@ -1,0 +1,17 @@
+.cart-layout {
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+  align-items: flex-start;
+}
+
+.cart-main {
+  flex: 1;
+}
+
+.cart-side {
+  width: 280px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 1rem;
+}

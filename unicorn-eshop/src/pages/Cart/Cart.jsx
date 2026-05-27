@@ -10,6 +10,7 @@ import ShippingPayment from "../../components/Cart/ShippingPayment/ShippingPayme
 import { useCart } from "../../context/CartContext";
 import QR from "../../components/Cart/QR/QR";
 import { useNavigate } from "react-router-dom";
+import "./Cart.css"
 
 export default function CartPage() {
   const { cartItems, removeFromCart, changeQty } = useCart();
@@ -37,44 +38,52 @@ export default function CartPage() {
       <NavBar />
       <Steps currentStep={currentStep} onStepChange={setCurrentStep} />
 
-      {currentStep === 1 && (
-        <List
-          cartItems={cartItems}
-          onRemove={(id, size) => removeFromCart(id, size)}
-          onChangeQty={(id, size, delta) => changeQty(id, size, delta)}
-          onNext={() => setCurrentStep(2)}
-        />
-      )}
-      {currentStep === 2 && (
-        <Form
-          formData={formData}
-          setFormData={setFormData}
-          onBack={() => setCurrentStep(1)}
-          onNext={() => setCurrentStep(3)}
-        />
-      )}
-      {currentStep === 3 && (
-        <ShippingPayment
-          cartItems={cartItems}
-          shipping={shipping}
-          setShipping={setShipping}
-          payment={payment}
-          setPayment={setPayment}
-          onBack={() => setCurrentStep(2)}
-          onNext={() => setCurrentStep(4)}
-        />
-      )}
-      {currentStep === 4 && (
-        <List
-          cartItems={cartItems}
-          readOnly
-          formData={formData}
-          shipping={shipping}
-          payment={payment}
-          onBack={() => setCurrentStep(3)}
-          onNext={() => navigate("/cart/QR")}
-        />
-      )}
+      <div className="cart-layout">
+        <div className="cart-main">
+          {currentStep === 1 && (
+            <List
+              cartItems={cartItems}
+              onRemove={(id, size) => removeFromCart(id, size)}
+              onChangeQty={(id, size, delta) => changeQty(id, size, delta)}
+              onNext={() => setCurrentStep(2)}
+            />
+          )}
+          {currentStep === 2 && (
+            <Form
+              formData={formData}
+              setFormData={setFormData}
+              onBack={() => setCurrentStep(1)}
+              onNext={() => setCurrentStep(3)}
+            />
+          )}
+          {currentStep === 3 && (
+            <ShippingPayment
+              cartItems={cartItems}
+              shipping={shipping}
+              setShipping={setShipping}
+              payment={payment}
+              setPayment={setPayment}
+              onBack={() => setCurrentStep(2)}
+              onNext={() => setCurrentStep(4)}
+            />
+          )}
+          {currentStep === 4 && (
+            <List
+              cartItems={cartItems}
+              readOnly
+              formData={formData}
+              shipping={shipping}
+              payment={payment}
+              onBack={() => setCurrentStep(3)}
+              onNext={() => navigate("/cart/QR")}
+            />
+          )}
+        </div>
+
+        <div className="cart-side">
+          <ContactCart />
+        </div>
+      </div>
 
       <Footer />
     </>
