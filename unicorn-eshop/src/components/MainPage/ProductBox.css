@@ -61,25 +61,25 @@
 }
 
 
-.info {
+.info-product {
   padding: 18px;
 }
 
-.info .brand {
+.info-product .brand {
   font-size: 12px;
   color: #777;
   letter-spacing: 2px;
   margin-bottom: 6px;
 }
 
-.info .name {
+.info-product .name {
   font-size: 20px;
   color: #111;
   margin-bottom: 12px;
   font-weight: 600;
 }
 
-.info p {
+.info-product p {
   color: #8B5CF6;
   font-size: 24px;
   font-weight: bold;

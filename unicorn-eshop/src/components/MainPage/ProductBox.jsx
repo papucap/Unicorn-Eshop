@@ -48,7 +48,7 @@ const PRODUCTS_DATA = [
   },
 ];
 
-function ProductBox({title = "Produkty"}) {
+function ProductBox({ title = "Produkty" }) {
   return (
     <>
       <div className="productSection">
@@ -72,7 +72,7 @@ function ProductBox({title = "Produkty"}) {
                 ))}
               </div>
 
-              <div className="info">
+              <div className="info-product">
                 <h1 className="brand">{product.brand}</h1>
                 <h1 className="name">{product.name}</h1> <br />
                 <p>{product.price.toLocaleString()} Kč</p>
