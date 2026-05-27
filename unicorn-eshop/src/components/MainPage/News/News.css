@@ -3,7 +3,7 @@
   background-color: #2B2740;
 }
 
-#nadpis {
+#title-news {
   font-size: 28px; 
   letter-spacing: 2px;
   color: #ECEEF2;
@@ -33,7 +33,7 @@
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
 }
 
-.images {
+.images-news {
   height: 300px; 
   display: flex;
   justify-content: center;
@@ -41,19 +41,19 @@
   padding: 10px;
 }
 
-.images .img {
+.images-news .img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
-.news:hover .images .img {
+.news:hover .images-news .img {
   transform: scale(1.03);
 }
 
 
-.info {
+.info-news {
   padding: 20px;
 }
 
