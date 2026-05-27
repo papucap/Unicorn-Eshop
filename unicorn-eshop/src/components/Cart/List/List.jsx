@@ -11,7 +11,17 @@ const PAYMENT_LABELS = {
   cod: "Dobírka",
 };
 
-const List = ({ cartItems, onRemove, onChangeQty, onNext, onBack, readOnly, formData, shipping, payment }) => {
+const List = ({
+  cartItems,
+  onRemove,
+  onChangeQty,
+  onNext,
+  onBack,
+  readOnly,
+  formData,
+  shipping,
+  payment,
+}) => {
   if (!cartItems || cartItems.length === 0) {
     return <p className="empty">Košík je prázdný</p>;
   }
@@ -38,15 +48,17 @@ const List = ({ cartItems, onRemove, onChangeQty, onNext, onBack, readOnly, form
             <div className="cart-item-actions">
               <button onClick={() => onRemove(item.id, item.size)}>✕</button>
               <div className="qty">
-                <button onClick={() => onChangeQty(item.id, item.size, -1)}>−</button>
+                <button onClick={() => onChangeQty(item.id, item.size, -1)}>
+                  −
+                </button>
                 <span>{item.qty}</span>
-                <button onClick={() => onChangeQty(item.id, item.size, +1)}>+</button>
+                <button onClick={() => onChangeQty(item.id, item.size, +1)}>
+                  +
+                </button>
               </div>
             </div>
           )}
-          {readOnly && (
-            <p className="cart-item-qty">× {item.qty}</p>
-          )}
+          {readOnly && <p className="cart-item-qty">× {item.qty}</p>}
         </div>
       ))}
 
@@ -54,10 +66,14 @@ const List = ({ cartItems, onRemove, onChangeQty, onNext, onBack, readOnly, form
         <div className="cart-summary-info">
           <div className="summary-block">
             <p className="summary-block-title">Dodací údaje</p>
-            <p>{formData.firstName} {formData.lastName}</p>
+            <p>
+              {formData.firstName} {formData.lastName}
+            </p>
             <p>{formData.email}</p>
             <p>+420 {formData.phone}</p>
-            <p>{formData.street}, {formData.city}, {formData.zip}</p>
+            <p>
+              {formData.street}, {formData.city}, {formData.zip}
+            </p>
           </div>
           <div className="summary-block">
             <p className="summary-block-title">Doprava a platba</p>
@@ -82,16 +98,14 @@ const List = ({ cartItems, onRemove, onChangeQty, onNext, onBack, readOnly, form
         </div>
 
         <div className="btn-row">
-          {onBack && (
-            <button onClick={onBack}>‹ Zpět</button>
-          )}
+          {onBack && <button onClick={onBack}>‹ Zpět</button>}
           {!readOnly && (
             <button className="checkout-btn" onClick={onNext}>
               Přejít k pokladně
             </button>
           )}
           {readOnly && (
-            <button className="checkout-btn">
+            <button className="checkout-btn" onClick={onNext}>
               Potvrdit objednávku
             </button>
           )}

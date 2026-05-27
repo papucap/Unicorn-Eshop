@@ -5,6 +5,7 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import ContactPage from './pages/Contact/Contactpage';
 import Cart from './pages/Cart/Cart'
 import "./App.css"
+import QRPage from './pages/Cart/QR/QRPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path = "/about" element = {<AboutUs />} />
       <Route path = "/contact" element ={<ContactPage />} />
       <Route path = "/cart" element = {<Cart />} />
+      <Route path = "/cart/QR" element = {<QRPage/>} />
     </Routes>
     
   );
