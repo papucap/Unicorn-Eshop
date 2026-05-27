@@ -1,70 +1,40 @@
 import "./ProductBox.css";
 
-const PRODUCTS_DATA = [
-  {
-    id: 1,
-    brand: "NIKE",
-    name: "AirMax 3",
-    price: 3555,
-    images: [
-      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
-    ],
-  },
-  {
-    id: 2,
-    brand: "NIKE",
-    name: "AirMax 3",
-    price: 3555,
-    images: [
-      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
-    ],
-  },
-  {
-    id: 3,
-    brand: "NIKE",
-    name: "AirMax 3",
-    price: 3555,
-    images: [
-      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
-    ],
-  },
-  {
-    id: 4,
-    brand: "NIKE",
-    name: "AirMax 3",
-    price: 3555,
-    images: [
-      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
-    ],
-  },
-  {
-    id: 5,
-    brand: "NIKE",
-    name: "AirMax 3",
-    price: 3555,
-    images: [
-      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
-    ],
-  },
-];
+function ProductBox({ title, products = [], lang = "cs" }) {
+  // Výchozí nadpis, pokud žádný nepřijde v props
+  const defaultTitles = {
+    cs: "Produkty",
+    en: "Products",
+  };
 
-function ProductBox({ title = "Produkty" }) {
+  const buttons = {
+    cs: "Zobrazit vše",
+    en: "Show all",
+  };
+
+  const currencies = {
+    cs: "Kč",
+    en: "CZK",
+  };
+
+  const displayTitle = title || defaultTitles[lang];
+
   return (
     <>
       <div className="productSection">
         <div className="productSection-top">
-          <h1>{title}</h1>
+          <h1>{displayTitle}</h1>
 
           <button
             className="show-all-btn"
             onClick={() => (window.location.href = "/products")}
           >
-            Zobrazit vše
+            {buttons[lang]}
           </button>
         </div>
 
         <div className="productContainer">
-          {PRODUCTS_DATA.map((product) => (
+          {products.map((product) => (
             <div className="product" key={product.id}>
               <div className="images-product">
                 {product.images.map((img, i) => (
@@ -75,7 +45,9 @@ function ProductBox({ title = "Produkty" }) {
               <div className="info-product">
                 <h1 className="brand-product">{product.brand}</h1>
                 <h1 className="name-product">{product.name}</h1> <br />
-                <p>{product.price.toLocaleString()} Kč</p>
+                <p>
+                  {product.price.toLocaleString()} {currencies[lang]}
+                </p>
               </div>
             </div>
           ))}

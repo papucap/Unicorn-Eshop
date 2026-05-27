@@ -8,6 +8,7 @@ import ProfilePage from './pages/Profile/ProfilePage';
 import LoginPage from './pages/Login/LoginPage';
 import RegisterPage from './pages/Registrace/RegistracePage';
 import "./App.css"
+import QRPage from './pages/Cart/QR/QRPage';
 
 
 
@@ -24,8 +25,7 @@ function App() {
       <Route path = "/profile" element = {<ProfilePage/>} />
       <Route path = "/login" element = {<LoginPage/>} />
       <Route path = "/register" element = {<RegisterPage/>} />
-
-
+      <Route path = "/cart/QR" element = {<QRPage/>} />
     </Routes>
     
   );
