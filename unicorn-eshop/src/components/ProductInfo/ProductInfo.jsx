@@ -4,6 +4,7 @@ import "./ProductInfo.css";
 
 const ProductInfo = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState(null);
+  const [msg, setMsg] = useState(null);
   const { addToCart } = useCart();
 
   if (!product) return null;
@@ -11,8 +12,14 @@ const ProductInfo = ({ product }) => {
   const hasSizes = product.sizes && product.sizes.length > 0;
 
   const handleAdd = () => {
-    if (hasSizes && !selectedSize) return;
+    if (hasSizes && !selectedSize) {
+      setMsg({ text: "Nejprve vyberte velikost", type: "error" });
+      setTimeout(() => setMsg(null), 2500);
+      return;
+    }
     addToCart(product, selectedSize);
+    setMsg({ text: "Produkt byl přidán do košíku", type: "success" });
+    setTimeout(() => setMsg(null), 2500);
   };
 
   return (
@@ -42,12 +49,12 @@ const ProductInfo = ({ product }) => {
         )}
 
         <div className="pridat-do-kosiku">
-          <button
-            disabled={hasSizes && !selectedSize}
-            onClick={handleAdd}
-          >
+          <button onClick={handleAdd}>
             {hasSizes && !selectedSize ? "Vyberte velikost" : "Přidat do košíku"}
           </button>
+          {msg && (
+            <p className={`cart-msg ${msg.type}`}>{msg.text}</p>
+          )}
         </div>
       </div>
     </div>
