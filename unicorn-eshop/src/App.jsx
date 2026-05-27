@@ -9,8 +9,11 @@ function App() {
     <Routes>
       <Route path="/" element={<MainPage />} />
       <Route path="/products" element={<Products />} />
+      <Route path="/products/:category" element={<Products />} />
       <Route path = "/about" element = {<AboutUs />} />
+      <Route path = "/contact" element ={<ContactPage />} />
     </Routes>
+    
   );
 }
 
