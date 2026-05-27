@@ -24,16 +24,16 @@ function UnorderedList({ className = "", items = [] }) {
 
 function Footer() {
   const infoLinks = [
-    { label: "O nás", url: "/" },
+    { label: "O nás", url: "/about" },
     { label: "Kontakt", url: "/contact" },
     { label: "Q&A", url: "/about" },
-    { label: "Reklamace", url: "/about" },
+    { label: "Reklamace", url: "/contact" },
   ];
 
   const shopLinks = [
-    { label: "Oblečení", url: "/" },
-    { label: "Boty", url: "/" },
-    { label: "Doplňky", url: "/" },
+    { label: "Oblečení", url: "/products" },
+    { label: "Boty", url: "/products" },
+    { label: "Doplňky", url: "/products" },
     { label: "Novinky", url: "/" },
   ];
 
