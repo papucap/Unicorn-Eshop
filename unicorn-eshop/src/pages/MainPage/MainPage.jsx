@@ -3,8 +3,8 @@ import NavBar from "../../components/NavBar/NavBar";
 import Footer from "../../components/Footer/Footer";
 import Slider from "../../components/MainPage/Slider/Slider";
 import Header from "../../components/Header/Header";
-import News from "../../components/MainPage/News/News";
 import ProductBox from "../../components/MainPage/ProductBox";
+import News from "../../components/MainPage/News/News";
 
 export default function MainPage() {
   return (
@@ -12,10 +12,9 @@ export default function MainPage() {
       <Header />
       <NavBar />
       <Slider />
-      <ProductBox title = "NEJNOVĚJŠÍ PRODUKTY" />
-      
+      <ProductBox title="NEJNOVĚJŠÍ PRODUKTY" />
       <News />
-      <ProductBox title = "TRENDY"/>
+      <ProductBox title="TRENDY" />
       <Footer />
     </div>
   );

@@ -21,17 +21,17 @@ function News() {
   return (
     <>
       <div className="newsSection">
-        <h1 id="nadpis">TOHLE NESMÍŠ MINOUT!</h1>
+        <h1 id="title-news">TOHLE NESMÍŠ MINOUT!</h1>
 
         <div className="newsContainer">
           {NEWS_DATA.map((news) => (
             <div className="news" key={news.id}>
-              <div className="images">
+              <div className="images-news">
                 {news.images.map((img, i) => (
                   <img key={i} src={img} alt={news.title} className="img" />
                 ))}
               </div>
-              <div className="info">
+              <div className="info-news">
                 <h2 className="news-title">{news.title}</h2>
                 <p className="news-content">{news.content}</p>
               </div>
