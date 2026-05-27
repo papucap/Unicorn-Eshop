@@ -4,9 +4,8 @@ import "./NavBar.css";
 function NavBar({ onSearch, lang = "cs" }) {
   const navLinks = [
     { label: { cs: "NOVINKY", en: "NEWS" }, url: "/" },
-    { label: { cs: "BOTY", en: "SHOES" }, url: "/products" },
     { label: { cs: "OBLEČENÍ", en: "CLOTHING" }, url: "/products" },
-    { label: { cs: "DOPLŇKY", en: "ACCESSORIES" }, url: "/products" },
+    { label: { cs: "DOPLŇKY", en: "ACCESSORIES" }, url: "/products/accessories" },
     { label: { cs: "O NÁS", en: "ABOUT US" }, url: "/about" },
   ];
 

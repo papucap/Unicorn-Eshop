@@ -9,7 +9,7 @@ function Header({ lang = "cs" }) {
     { label: { cs: "Vše", en: "All" }, url: "/products" },
     { label: { cs: "Muži", en: "Men" }, url: "/products/men" },
     { label: { cs: "Ženy", en: "Women" }, url: "/products/women" },
-    { label: { cs: "Děti", en: "Kids" }, url: "/about" },
+    { label: { cs: "Děti", en: "Kids" }, url: "https://www.kinder.com/cz/cs/" },
   ];
 
   return (
@@ -25,7 +25,9 @@ function Header({ lang = "cs" }) {
       </div>
 
       <div className="logo">
-        <img src="/src/assets/logo.png" alt="Unicorn Eshop Logo" />
+        <Link to = '/'>
+          <img src="/src/assets/logo.png" alt="Unicorn Eshop Logo" />
+        </Link>
       </div>
 
       <div className="more">
