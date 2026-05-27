@@ -8,9 +8,7 @@
   align-items: center;
 }
 
-
-
-  .footer .logo {
+.footer .logo {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,7 +19,6 @@
   height: 55px;
   object-fit: contain;
 }
-
 
 .footer h3 {
   font-size: 14px;
@@ -45,8 +42,8 @@
   margin-left: 60px;
 }
 
-.info-links ul,
-.shop-links ul {
+.info-links-list,
+.shop-links-list {
   list-style: none;
   margin: 15px 0 0;
   padding: 0;
@@ -55,16 +52,16 @@
   gap: 10px;
 }
 
-.info-links a,
-.shop-links a {
+.info-links-list a,
+.shop-links-list a {
   color: white;
   text-decoration: none;
   font-size: 14px;
   transition: 0.2s;
 }
 
-.info-links a:hover,
-.shop-links a:hover {
+.info-links-list a:hover,
+.shop-links-list a:hover {
   opacity: 0.6;
 }
 
@@ -86,7 +83,7 @@
   align-items: center;
 }
 
-.socials-links a {
+.socials-links-list a {
   color: white;
   font-size: 22px;
   display: flex;
@@ -94,15 +91,16 @@
   transition: 0.2s;
 }
 
-.socials-links a:hover {
+.socials-links-list a:hover {
   opacity: 0.6;
 }
 
 .copyright {
-    grid-column: 1 / -1;
+  grid-column: 1 / -1;
   background-color: #5C5F7A;
   text-align: center;
   margin-top: 30px;
   font-size: 12px;
   opacity: 0.6;
+  padding: 10px 0;
 }

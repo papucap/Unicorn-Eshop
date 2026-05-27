@@ -3,83 +3,83 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import XIcon from "@mui/icons-material/X";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import "./Footer.css";
-import { Link } from "react-router-dom";
+
+function UnorderedList({ className = "", items = [] }) {
+  return (
+    <ul className={className}>
+      {items.map((item, index) => (
+        <li key={index}>
+          <a
+            href={item.url}
+            target={item.target || "_self"}
+            rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
+          >
+            {item.label || item.icon}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 function Footer() {
+  const infoLinks = [
+    { label: "O nás", url: "/about" },
+    { label: "Kontakt", url: "/contact" },
+    { label: "Q&A", url: "/about" },
+    { label: "Reklamace", url: "/contact" },
+  ];
+
+  const shopLinks = [
+    { label: "Oblečení", url: "/products" },
+    { label: "Boty", url: "/products" },
+    { label: "Doplňky", url: "/products" },
+    { label: "Novinky", url: "/" },
+  ];
+
+  const socialLinks = [
+    {
+      icon: <InstagramIcon />,
+      url: "https://www.instagram.com/",
+      target: "_blank",
+    },
+    {
+      icon: <YouTubeIcon />,
+      url: "https://www.youtube.com/",
+      target: "_blank",
+    },
+    { icon: <XIcon />, url: "https://www.x.com/", target: "_blank" },
+    {
+      icon: <FacebookIcon />,
+      url: "https://www.facebook.com/",
+      target: "_blank",
+    },
+  ];
+
   return (
-    <>
-      <footer className="footer">
-        <div className="logo">
-          <img src="./src/assets/logo.png" alt="Unicorn Eshop Logo" />
-        </div>
+    <footer className="footer">
+      <div className="logo">
+        <img src="./src/assets/logo.png" alt="Unicorn Eshop Logo" />
+      </div>
 
-        <div className="info-links">
-          <h3>Informace</h3>
+      <div className="info-links">
+        <h3>Informace</h3>
+        <UnorderedList className="info-links-list" items={infoLinks} />
+      </div>
 
-          <ul className="info-links-list">
-            <li>
-              <Link to="/about">O nás</Link>
-            </li>
-            <li>
-              <Link to="/contact">Kontakt</Link>
-            </li>
-            <li>
-              <a href="/about">Q&A</a>
-            </li>
-            <li>
-              <a href="/about">Reklamace</a>
-            </li>
-          </ul>
-        </div>
+      <div className="shop-links">
+        <h3>Obchod</h3>
+        <UnorderedList className="shop-links-list" items={shopLinks} />
+      </div>
 
-        <div className="shop-links">
-          <h3>Obchod</h3>
-          <ul className="shop-links-list">
-            <li>
-              <a href="/">Oblečení</a>
-            </li>
-            <li>
-              <a href="/">Boty</a>
-            </li>
-            <li>
-              <a href="/">Doplňky</a>
-            </li>
-            <li>
-              <a href="/">Novinky</a>
-            </li>
-          </ul>
-        </div>
+      <div className="socials-links">
+        <UnorderedList className="socials-links-list" items={socialLinks} />
+      </div>
 
-        <div className="socials-links">
-          <ul className="socials-links-list">
-            <li>
-              <a href="https://www.instagram.com/" target="_blank">
-                <InstagramIcon />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/" target="_blank">
-                <YouTubeIcon />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.x.com/" target="_blank">
-                <XIcon />
-              </a>
-            </li>
-            <li>
-              <a href="https://www.facebook.com/" target="_blank">
-                <FacebookIcon />
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="copyright">
-          <p>© 2024 Unicorn Eshop. Všechna práva vyhrazena.</p>
-        </div>
-      </footer>
-    </>
+      <div className="copyright">
+        <p>© 2024 Unicorn Eshop. Všechna práva vyhrazena.</p>
+      </div>
+    </footer>
   );
 }
 
