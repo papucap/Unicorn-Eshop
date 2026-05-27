@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./NavBar.css";
-function NavBar({onSearch}) {
+function NavBar({ onSearch }) {
   return (
     <>
       <div className="nav-container">
@@ -14,10 +14,10 @@ function NavBar({onSearch}) {
                 <Link to="/products">BOTY</Link>
               </li>
               <li>
-                <Link to="/contact">OBLEČENÍ</Link>
+                <Link to="/products">OBLEČENÍ</Link>
               </li>
               <li>
-                <Link to="/about">DOPLŇKY</Link>
+                <Link to="/products">DOPLŇKY</Link>
               </li>
               <li>
                 <Link to="/about">O NÁS</Link>
