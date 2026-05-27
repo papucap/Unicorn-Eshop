@@ -1,7 +1,7 @@
 .slider {
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 3px;
 }
 
 .slider-track {
@@ -57,5 +57,5 @@
 }
 
 .slider-dot.active {
-  background: #2B2740;
+  background: #8B5CF6;
 }
