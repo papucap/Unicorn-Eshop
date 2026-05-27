@@ -24,7 +24,7 @@ function Header() {
       </div>
 
       <div className="logo">
-        <img src="./src/assets/logo.png" alt="Unicorn Eshop Logo" />
+        <img src="/src/assets/logo.png" alt="Unicorn Eshop Logo" />
       </div>
 
       <div className="more">

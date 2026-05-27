@@ -59,7 +59,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="logo">
-        <img src="./src/assets/logo.png" alt="Unicorn Eshop Logo" />
+        <img src="/src/assets/logo.png" alt="Unicorn Eshop Logo" />
       </div>
 
       <div className="info-links">
