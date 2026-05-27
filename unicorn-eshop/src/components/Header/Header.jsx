@@ -23,7 +23,8 @@ function Header({ lang = "cs", setLang }) {
         <ul>
           {menuLinks.map((link, index) => (
             <li key={index}>
-              <a href={link.url}>{link.label[lang]}</a>
+              {/* Změněno z <a> na <Link> */}
+              <Link to={link.url}>{link.label[lang]}</Link>
             </li>
           ))}
         </ul>
@@ -36,9 +37,10 @@ function Header({ lang = "cs", setLang }) {
       <div className="more">
         <ul>
           <li>
-            <a href="/profile">
+            {/* Změněno z <a> na <Link> */}
+            <Link to="/profile">
               <AccountCircleIcon />
-            </a>
+            </Link>
           </li>
           <li>
             <Link to="/cart">
@@ -46,9 +48,10 @@ function Header({ lang = "cs", setLang }) {
             </Link>
           </li>
           <li>
-            <a href="/likes">
+            {/* Změněno z <a> na <Link> */}
+            <Link to="/likes">
               <FavoriteBorderIcon />
-            </a>
+            </Link>
           </li>
 
           <li>
