@@ -5,6 +5,11 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import ContactPage from './pages/Contact/Contactpage';
 import Cart from './pages/Cart/Cart'
 import "./App.css"
+import ProfilePage from './pages/Profile/ProfilePage';
+import LoginPage from './pages/Login/LoginPage';
+import RegisterPage from './pages/Registrace/RegistracePage';
+
+
 
 function App() {
   return (
@@ -15,6 +20,11 @@ function App() {
       <Route path = "/about" element = {<AboutUs />} />
       <Route path = "/contact" element ={<ContactPage />} />
       <Route path = "/cart" element = {<Cart />} />
+      <Route path = "/profile" element = {<ProfilePage/>} />
+      <Route path = "/login" element = {<LoginPage/>} />
+      <Route path = "/register" element = {<RegisterPage/>} />
+
+
     </Routes>
     
   );

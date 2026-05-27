@@ -31,7 +31,7 @@ function Header() {
       <div className="more">
         <ul>
           <li>
-            <a href="/profile">
+            <a href={localStorage.getItem('currentUser') ? "/profile" : "/login"}>
               <AccountCircleIcon />
             </a>
           </li>
