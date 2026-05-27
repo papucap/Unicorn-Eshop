@@ -1,0 +1,122 @@
+.qr-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: insaneBackground 0.15s infinite;
+}
+
+/* CENTER BUTTON */
+.qr-button {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    z-index: 9999;
+
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    background: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.qr-button a {
+    text-decoration: none;
+    color: black;
+}
+
+/* ALL QR CODES */
+.qr-img {
+    position: absolute;
+    width: 180px;
+
+    animation:
+        spin 1.5s linear infinite,
+        teleport 0.5s infinite alternate,
+        rainbowFlash 0.1s infinite,
+        shake 0.08s infinite;
+
+    mix-blend-mode: difference;
+}
+
+/* DIFFERENT POSITIONS */
+.qr1 { top: 10%; left: 10%; }
+.qr2 { top: 20%; right: 15%; }
+.qr3 { bottom: 15%; left: 20%; }
+.qr4 { bottom: 10%; right: 10%; }
+.qr5 { top: 40%; left: 40%; }
+.qr6 { top: 60%; right: 35%; }
+
+/* INSANE BACKGROUND */
+@keyframes insaneBackground {
+    0% { background: red; }
+    10% { background: blue; }
+    20% { background: lime; }
+    30% { background: yellow; }
+    40% { background: magenta; }
+    50% { background: cyan; }
+    60% { background: orange; }
+    70% { background: hotpink; }
+    80% { background: white; }
+    90% { background: black; }
+    100% { background: purple; }
+}
+
+/* ROTATE */
+@keyframes spin {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1.5);
+    }
+}
+
+/* RANDOM MOVEMENT */
+@keyframes teleport {
+    0% {
+        translate: 0 0;
+    }
+
+    25% {
+        translate: 50px -100px;
+    }
+
+    50% {
+        translate: -100px 80px;
+    }
+
+    75% {
+        translate: 120px 30px;
+    }
+
+    100% {
+        translate: -50px -50px;
+    }
+}
+
+/* RGB CRAZY */
+@keyframes rainbowFlash {
+    0% { filter: hue-rotate(0deg) saturate(1); }
+    25% { filter: hue-rotate(90deg) saturate(5); }
+    50% { filter: hue-rotate(180deg) saturate(10); }
+    75% { filter: hue-rotate(270deg) saturate(5); }
+    100% { filter: hue-rotate(360deg) saturate(1); }
+}
+
+/* SCREEN SHAKE */
+@keyframes shake {
+    0% { margin-left: 0px; }
+    25% { margin-left: 10px; }
+    50% { margin-left: -10px; }
+    75% { margin-left: 5px; }
+    100% { margin-left: -5px; }
+}

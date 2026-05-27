@@ -1,0 +1,29 @@
+.profil{ 
+    padding: 100px;
+    text-align: center ;
+}
+.udaje{
+    border: 2px solid #ECEEF2;
+    border-radius: 6px;
+    padding: 20px;
+    display: inline-block;
+    text-align: left;
+    gap: 20px;
+    width: 300px;
+}
+.profile-out{
+    padding: 10px;
+    background-color: #2B2740;
+    color: #ECEEF2;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    float: right;
+}
+.profile-out:hover{
+    background-color: #8B5CF6;
+    color: #ECEEF2;
+}
+
+

@@ -8,6 +8,9 @@ import Cart from "./pages/Cart/Cart";
 import "./App.css";
 import QRPage from "./pages/Cart/QR/QRPage";
 
+
+
+
 function App() {
   // Hlavní stav pro jazyk celého eshopu
   const [lang, setLang] = useState("cs");
