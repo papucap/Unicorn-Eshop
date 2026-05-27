@@ -66,15 +66,15 @@ function ProductBox({ title = "Produkty" }) {
         <div className="productContainer">
           {PRODUCTS_DATA.map((product) => (
             <div className="product" key={product.id}>
-              <div className="images">
+              <div className="images-product">
                 {product.images.map((img, i) => (
                   <img key={i} src={img} alt={product.name} className="img" />
                 ))}
               </div>
 
               <div className="info-product">
-                <h1 className="brand">{product.brand}</h1>
-                <h1 className="name">{product.name}</h1> <br />
+                <h1 className="brand-product">{product.brand}</h1>
+                <h1 className="name-product">{product.name}</h1> <br />
                 <p>{product.price.toLocaleString()} Kč</p>
               </div>
             </div>
