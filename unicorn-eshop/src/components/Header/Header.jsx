@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import GTranslateIcon from "@mui/icons-material/GTranslate";
 import "./Header.css";
 
 function Header({ lang = "cs", setLang }) {
@@ -23,7 +23,6 @@ function Header({ lang = "cs", setLang }) {
         <ul>
           {menuLinks.map((link, index) => (
             <li key={index}>
-              {/* Změněno z <a> na <Link> */}
               <Link to={link.url}>{link.label[lang]}</Link>
             </li>
           ))}
@@ -37,7 +36,6 @@ function Header({ lang = "cs", setLang }) {
       <div className="more">
         <ul>
           <li>
-            {/* Změněno z <a> na <Link> */}
             <Link to="/profile">
               <AccountCircleIcon />
             </Link>
@@ -48,18 +46,12 @@ function Header({ lang = "cs", setLang }) {
             </Link>
           </li>
           <li>
-            {/* Změněno z <a> na <Link> */}
-            <Link to="/likes">
-              <FavoriteBorderIcon />
-            </Link>
-          </li>
-
-          <li>
             <button
+              className="lang-btn"
               className="lang-switcher-btn"
               onClick={() => setLang(lang === "cs" ? "en" : "cs")}
             >
-              {langToggleText[lang]}
+              <GTranslateIcon />
             </button>
           </li>
         </ul>
