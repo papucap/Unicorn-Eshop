@@ -3,12 +3,13 @@ import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import AboutUsComponent from "../../components/AboutUs/AboutUs";
 
-export default function AboutUs() {
+export default function AboutUs({ lang, setLang }) {
   return (
     <>
-      <NavBar />
-      <AboutUsComponent />
-      <Footer />
+      <Header lang={lang} setLang={setLang} />
+      <NavBar lang={lang} />
+      <AboutUsComponent lang={lang} />
+      <Footer lang={lang} />
     </>
   );
 }

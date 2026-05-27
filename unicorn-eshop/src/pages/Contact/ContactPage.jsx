@@ -1,15 +1,13 @@
-import Contact from '../../components/Contact/Contact'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
+import Contact from "../../components/Contact/Contact";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
-const ContactPage = () => {
+export default function ContactPage({ lang, setLang }) {
   return (
     <div>
-        <Header></Header>
-        <Contact></Contact>
-        <Footer></Footer>
+      <Header lang={lang} setLang={setLang} />
+      <Contact lang={lang} />
+      <Footer lang={lang} />
     </div>
-  )
+  );
 }
-
-export default ContactPage

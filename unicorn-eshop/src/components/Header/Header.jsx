@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import GTranslateIcon from "@mui/icons-material/GTranslate";
 import "./Header.css";
 
-function Header({ lang = "cs" }) {
+function Header({ lang = "cs", setLang }) {
   const menuLinks = [
     { label: { cs: "Vše", en: "All" }, url: "/products" },
     { label: { cs: "Muži", en: "Men" }, url: "/products/men" },
@@ -12,13 +12,18 @@ function Header({ lang = "cs" }) {
     { label: { cs: "Děti", en: "Kids" }, url: "https://www.kinder.com/cz/cs/" },
   ];
 
+  const langToggleText = {
+    cs: "EN",
+    en: "CZ",
+  };
+
   return (
     <header>
       <div className="links">
         <ul>
           {menuLinks.map((link, index) => (
             <li key={index}>
-              <a href={link.url}>{link.label[lang]}</a>
+              <Link to={link.url}>{link.label[lang]}</Link>
             </li>
           ))}
         </ul>
@@ -33,9 +38,9 @@ function Header({ lang = "cs" }) {
       <div className="more">
         <ul>
           <li>
-            <a href={localStorage.getItem('currentUser') ? "/profile" : "/login"}>
+            <Link to="/profile">
               <AccountCircleIcon />
-            </a>
+            </Link>
           </li>
           <li>
             <Link to="/cart">
@@ -43,9 +48,13 @@ function Header({ lang = "cs" }) {
             </Link>
           </li>
           <li>
-            <a href="/likes">
-              <FavoriteBorderIcon />
-            </a>
+            <button
+              className="lang-btn"
+              className="lang-switcher-btn"
+              onClick={() => setLang(lang === "cs" ? "en" : "cs")}
+            >
+              <GTranslateIcon />
+            </button>
           </li>
         </ul>
       </div>

@@ -1,6 +1,6 @@
 import "./Contact.css";
 
-function Contact({ lang = "en" }) {
+function Contact({ lang = "cs" }) {
   const translations = {
     title: { cs: "Kontaktujte nás", en: "Contact Us" },
     description: {
