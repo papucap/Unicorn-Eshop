@@ -4,23 +4,23 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import "./Header.css";
 
-function Header() {
+function Header({ lang = "cs" }) {
+  const menuLinks = [
+    { label: { cs: "Vše", en: "All" }, url: "/products" },
+    { label: { cs: "Muži", en: "Men" }, url: "/products/men" },
+    { label: { cs: "Ženy", en: "Women" }, url: "/products/women" },
+    { label: { cs: "Děti", en: "Kids" }, url: "/about" },
+  ];
+
   return (
     <header>
       <div className="links">
         <ul>
-          <li>
-            <a href="/products">Vše</a>
-          </li>
-          <li>
-            <a href="/products/men">Muži</a>
-          </li>
-          <li>
-            <a href="/products/women">Ženy</a>
-          </li>
-          <li>
-            <a href="/about">Děti</a>
-          </li>
+          {menuLinks.map((link, index) => (
+            <li key={index}>
+              <a href={link.url}>{link.label[lang]}</a>
+            </li>
+          ))}
         </ul>
       </div>
 
