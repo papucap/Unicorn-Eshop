@@ -1,15 +1,5 @@
 import "./List.css";
-
-const SHIPPING_LABELS = {
-  zasılkovna: "Zásilkovna – výdejní místo",
-  kuryr: "Kurýr na adresu",
-};
-
-const PAYMENT_LABELS = {
-  card: "Platební karta",
-  transfer: "Bankovní převod",
-  cod: "Dobírka",
-};
+import { cartTranslations } from "../cartTranslations";
 
 const List = ({
   cartItems,
@@ -21,27 +11,38 @@ const List = ({
   formData,
   shipping,
   payment,
+  lang = "cs",
 }) => {
+  const t = cartTranslations.list;
+  const shared = cartTranslations.shared;
+  const opts = cartTranslations.shippingPayment.options;
+
   if (!cartItems || cartItems.length === 0) {
-    return <p className="empty">Košík je prázdný</p>;
+    return <p className="empty">{t.empty[lang]}</p>;
   }
 
   const total = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
   const count = cartItems.reduce((sum, item) => sum + item.qty, 0);
+  const localeFormat = lang === "cs" ? "cs-CZ" : "en-US";
 
   return (
     <div className="cart">
-      <p className="cart-title">{readOnly ? "Souhrn objednávky" : "Košík"}</p>
+      <p className="cart-title">
+        {readOnly ? t.summaryTitle[lang] : t.cartTitle[lang]}
+      </p>
 
       {cartItems.map((item) => (
-        <div key={item.id} className="cart-item">
+        <div key={`${item.id}-${item.size}`} className="cart-item">
           <img src={item.images[0]} alt={item.name} className="cart-item-img" />
           <div className="cart-item-info">
             <p className="cart-item-brand">{item.brand}</p>
             <p className="cart-item-name">{item.name}</p>
-            <p className="cart-item-size">Velikost: EU {item.size}</p>
+            <p className="cart-item-size">
+              {t.size[lang]}: EU {item.size}
+            </p>
             <p className="cart-item-price">
-              {(item.price * item.qty).toLocaleString("cs-CZ")} Kč
+              {(item.price * item.qty).toLocaleString(localeFormat)}{" "}
+              {shared.currency[lang]}
             </p>
           </div>
           {!readOnly && (
@@ -65,7 +66,7 @@ const List = ({
       {readOnly && formData && (
         <div className="cart-summary-info">
           <div className="summary-block">
-            <p className="summary-block-title">Dodací údaje</p>
+            <p className="summary-block-title">{t.deliveryBlock[lang]}</p>
             <p>
               {formData.firstName} {formData.lastName}
             </p>
@@ -76,37 +77,39 @@ const List = ({
             </p>
           </div>
           <div className="summary-block">
-            <p className="summary-block-title">Doprava a platba</p>
-            <p>{SHIPPING_LABELS[shipping]}</p>
-            <p>{PAYMENT_LABELS[payment]}</p>
+            <p className="summary-block-title">{t.shippingBlock[lang]}</p>
+            <p>{opts[shipping]?.[lang]}</p>
+            <p>{opts[payment]?.[lang]}</p>
           </div>
         </div>
       )}
 
       <div className="cart-footer">
         <div className="cart-footer-row">
-          <span>Počet položek</span>
+          <span>{t.itemCount[lang]}</span>
           <span>{count}</span>
         </div>
         <div className="cart-footer-row">
-          <span>Doprava</span>
-          <span>zdarma</span>
+          <span>{t.shippingRow[lang]}</span>
+          <span>{shared.free[lang]}</span>
         </div>
         <div className="cart-footer-total">
-          <span>Celkem</span>
-          <span>{total.toLocaleString("cs-CZ")} Kč</span>
+          <span>{t.totalRow[lang]}</span>
+          <span>
+            {total.toLocaleString(localeFormat)} {shared.currency[lang]}
+          </span>
         </div>
 
         <div className="btn-row">
-          {onBack && <button onClick={onBack}>‹ Zpět</button>}
+          {onBack && <button onClick={onBack}>{shared.back[lang]}</button>}
           {!readOnly && (
             <button className="checkout-btn" onClick={onNext}>
-              Přejít k pokladně
+              {t.checkoutBtn[lang]}
             </button>
           )}
           {readOnly && (
             <button className="checkout-btn" onClick={onNext}>
-              Potvrdit objednávku
+              {t.confirmBtn[lang]}
             </button>
           )}
         </div>
