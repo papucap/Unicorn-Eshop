@@ -1,6 +1,6 @@
 import "./ProductBox.css";
 
-function ProductBox({ title, products = [], lang = "cs" }) {
+function ProductBox({ title, products = [], lang = "cs", onProductClick }) {
   const defaultTitles = {
     cs: "Produkty",
     en: "Products",
@@ -34,7 +34,11 @@ function ProductBox({ title, products = [], lang = "cs" }) {
 
         <div className="productContainer">
           {products.map((product) => (
-            <div className="product" key={product.id}>
+            <div
+              className="product"
+              key={product.id}
+              onClick={() => onProductClick(product)}
+            >
               <div className="images-product">
                 {product.images.map((img, i) => (
                   <img key={i} src={img} alt={product.name} className="img" />

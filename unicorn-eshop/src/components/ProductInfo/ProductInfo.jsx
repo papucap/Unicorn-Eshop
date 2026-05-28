@@ -29,6 +29,7 @@ const ProductInfo = ({ product, lang = "cs" }) => {
 
   return (
     <div className="page">
+      
       <div>
         <button onClick={() => window.location.reload()}>
           {" "}
