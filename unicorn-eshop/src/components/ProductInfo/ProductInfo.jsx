@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useCart } from "../../context/CartContext";
 import "./ProductInfo.css";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { Link } from "react-router-dom";
 
-const ProductInfo = ({ product }) => {
+const ProductInfo = ({ product, onBack }) => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [msg, setMsg] = useState(null);
   const { addToCart } = useCart();
@@ -25,8 +26,9 @@ const ProductInfo = ({ product }) => {
 
   return (
     <div className="page">
+      
       <div>
-        <button onClick={() => window.location.reload()}> <ArrowBackIcon /> </button>
+        <button onClick={onBack}> <ArrowBackIcon /> </button>
       </div>
       <div className="images">
         {product.images.map((img, i) => (
