@@ -7,9 +7,9 @@ import ContactPage from "./pages/Contact/Contactpage";
 import Cart from "./pages/Cart/Cart";
 import "./App.css";
 import QRPage from "./pages/Cart/QR/QRPage";
-
-
-
+import ProfilePage from "./pages/Profile/ProfilePage";
+import LoginPage from "./pages/Login/LoginPage"
+import RegistracePage from "./pages/Registrace/RegistracePage"
 
 function App() {
   // Hlavní stav pro jazyk celého eshopu
@@ -39,6 +39,11 @@ function App() {
         path="/cart/QR"
         element={<QRPage lang={lang} setLang={setLang} />}
       />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/profile" element={<ProfilePage />} />
+      <Route path="/register" element={<RegistracePage />} />
+
+      
     </Routes>
   );
 }
