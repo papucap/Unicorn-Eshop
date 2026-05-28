@@ -4,30 +4,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import XIcon from "@mui/icons-material/X";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
-function AboutUs({ lang = "cs" }) {
-  const translations = {
-    socialTitle: {
-      cs: "TISÍCE SPOKOJENÝCH ZÁKAZNÍKŮ",
-      en: "THOUSANDS OF SATISFIED CUSTOMERS",
-    },
-    socialsText: {
-      cs: "PŘESVĚDČTE SE SAMI NA NAŠICH SOCIÁLNÍCH SÍTÍCH",
-      en: "SEE FOR YOURSELF ON OUR SOCIAL MEDIA",
-    },
-    shopTitle: {
-      cs: "KAMENNÁ POBOČKA V PRAZE",
-      en: "OUR BRICK-AND-MORTAR STORE IN PRAGUE",
-    },
-    shopText: {
-      cs: "NA PŘÍKOPĚ, 110 00",
-      en: "NA PRIKOPE, 110 00",
-    },
-    shopAlt: {
-      cs: "Fotka obchodu",
-      en: "Shop photo",
-    },
-  };
+import { aboutUsTranslations } from "./aboutUsTranslations";
 
+function AboutUs({ lang = "cs" }) {
   return (
     <>
       <div className="logo-section">
@@ -35,8 +14,8 @@ function AboutUs({ lang = "cs" }) {
       </div>
 
       <div className="socialsContainer">
-        <h1 id="socialTitle">{translations.socialTitle[lang]}</h1>
-        <h3 id="socialsText">{translations.socialsText[lang]}</h3>
+        <h1 id="socialTitle">{aboutUsTranslations.socialTitle[lang]}</h1>
+        <h3 id="socialsText">{aboutUsTranslations.socialsText[lang]}</h3>
         <div className="socialsIcons">
           <ul className="socialsLinks">
             <li>
@@ -76,21 +55,21 @@ function AboutUs({ lang = "cs" }) {
       </div>
 
       <div className="shopPhotosContainer">
-        <h1 id="shopTitle">{translations.shopTitle[lang]}</h1>
-        <p id="shopText">{translations.shopText[lang]}</p>
+        <h1 id="shopTitle">{aboutUsTranslations.shopTitle[lang]}</h1>
+        <p id="shopText">{aboutUsTranslations.shopText[lang]}</p>
         <div className="shopPhotos">
           <img
             src="./src/assets/ShopPhotos/shop1.png"
-            alt={`${translations.shopAlt[lang]} 1`}
-          ></img>
+            alt={`${aboutUsTranslations.shopAlt[lang]} 1`}
+          />
           <img
             src="./src/assets/ShopPhotos/shop2.png"
-            alt={`${translations.shopAlt[lang]} 2`}
-          ></img>
+            alt={`${aboutUsTranslations.shopAlt[lang]} 2`}
+          />
           <img
             src="./src/assets/ShopPhotos/shop3.png"
-            alt={`${translations.shopAlt[lang]} 3`}
-          ></img>
+            alt={`${aboutUsTranslations.shopAlt[lang]} 3`}
+          />
         </div>
       </div>
     </>

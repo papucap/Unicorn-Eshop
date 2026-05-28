@@ -7,12 +7,17 @@ import { getAllProducts } from "../../api/api";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-export default function Products() {
+export default function Products({ lang, setLang }) {
   const { category } = useParams();
   const [selectedProduct, setSelectedProduct] = React.useState(null);
   const [products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [query, setQuery] = React.useState("");
+
+  const loadingText = {
+    cs: "Načítám produkty...",
+    en: "Loading products...",
+  };
 
   React.useEffect(() => {
     getAllProducts()
@@ -34,21 +39,27 @@ export default function Products() {
     if (category === "accessories") {
       return search && p.category === "jewelery";
     }
-    return search; // Pokud není vybraná kategorie zobrazí se vše
+    return search;
   });
 
   return (
     <div>
-      <Header />
-      <NavBar onSearch={setQuery} />
+      <Header lang={lang} setLang={setLang} />
+      <NavBar lang={lang} onSearch={setQuery} />
+
       {selectedProduct ? (
-        <ProductInfo product={selectedProduct} />
+        <ProductInfo lang={lang} product={selectedProduct} />
       ) : loading ? (
-        <p>Načítám produkty...</p>
+        <p>{loadingText[lang]}</p>
       ) : (
-        <ProductPage products={filtered} onProductClick={setSelectedProduct} />
+        <ProductPage
+          lang={lang}
+          products={filtered}
+          onProductClick={setSelectedProduct}
+        />
       )}
-      <Footer />
+
+      <Footer lang={lang} />
     </div>
   );
 }

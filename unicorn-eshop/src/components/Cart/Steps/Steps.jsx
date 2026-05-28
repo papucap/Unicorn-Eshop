@@ -1,24 +1,20 @@
 import styles from "./Steps.module.css";
+import { cartTranslations } from "../cartTranslations";
 
-const steps = [
-  { label: "Košík" },
-  { label: "Dodací údaje" },
-  { label: "Doprava a platba" },
-  { label: "Souhrn" },
-];
+export default function Steps({ currentStep, onStepChange, lang = "cs" }) {
+  const stepsData = cartTranslations.steps;
 
-export default function Steps({ currentStep, onStepChange }) {
   return (
     <div>
       <ol className={styles.steps}>
-        {steps.map((step, i) => {
+        {stepsData.map((step, i) => {
           const num = i + 1;
-          const isActive    = num === currentStep;
-          const isDone      = num < currentStep;
-          const className   = [
+          const isActive = num === currentStep;
+          const isDone = num < currentStep;
+          const className = [
             styles.item,
-            isActive ? styles.active  : "",
-            isDone   ? styles.available : "",
+            isActive ? styles.active : "",
+            isDone ? styles.available : "",
           ].join(" ");
 
           return (
@@ -28,7 +24,7 @@ export default function Steps({ currentStep, onStepChange }) {
                 onClick={() => isDone && onStepChange(num)}
               >
                 <span className={styles.icon}>{num}</span>
-                <span className={styles.label}>{step.label}</span>
+                <span className={styles.label}>{step[lang]}</span>
               </span>
             </li>
           );

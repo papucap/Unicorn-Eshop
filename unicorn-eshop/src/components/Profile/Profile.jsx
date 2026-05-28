@@ -1,10 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Profile.css";
+import { accountTranslations } from "./accountTranslations";
 
-export default function Profile() {
+export default function Profile({ lang = "cs" }) {
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("currentUser"));
+  const t = accountTranslations.profile;
 
   React.useEffect(() => {
     if (!user) navigate("/login");
@@ -19,15 +21,25 @@ export default function Profile() {
 
   return (
     <div>
-      <div className='profil'>
-        <h1>Vaše údaje</h1>
-        <div className='udaje'>
-          <p><strong>Jméno:</strong> {user.name}</p>
-          <p><strong>Příjmení:</strong> {user.lastName}</p>
-          <p><strong>Email:</strong> {user.email}</p>
-          <p><strong>Heslo:</strong> {user.password}</p>
-          <br></br>
-          <button className='profile-out' onClick={logout} >Odhlásit se</button>
+      <div className="profil">
+        <h1>{t.title[lang]}</h1>
+        <div className="udaje">
+          <p>
+            <strong>{t.name[lang]}:</strong> {user.name}
+          </p>
+          <p>
+            <strong>{t.lastName[lang]}:</strong> {user.lastName}
+          </p>
+          <p>
+            <strong>{t.email[lang]}:</strong> {user.email}
+          </p>
+          <p>
+            <strong>{t.password[lang]}:</strong> {user.password}
+          </p>
+          <br />
+          <button className="profile-out" onClick={logout}>
+            {t.logoutBtn[lang]}
+          </button>
         </div>
       </div>
     </div>

@@ -1,14 +1,19 @@
 import React from "react";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
-import ChatBubbleIcon from '@mui/icons-material/ChatBubble';
+import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import "./ContactCart.css";
+// 📦 Import souboru s překlady (uprav si cestu, pokud ho máš jinde)
+import { cartTranslations } from "../cartTranslations";
 
-export default function ContactCart() {
+export default function ContactCart({ lang = "cs" }) {
+  // Zkrácení cesty k překladům pro tuhle komponentu
+  const t = cartTranslations.contactCart;
+
   return (
     <div className="contact-cart">
-      <h1>Nevíš si s něčím rady?</h1>
-      <p>Rádi ti poradíme. Po–Pá 8:00–18:00.</p>
+      <h1>{t.title[lang]}</h1>
+      <p>{t.subtitle[lang]}</p>
 
       <ul>
         <li>
@@ -17,7 +22,7 @@ export default function ContactCart() {
         </li>
         <li>
           <ChatBubbleIcon />
-          <a href="#">Online chat</a>
+          <a href="#">{t.chat[lang]}</a>
         </li>
         <li>
           <EmailIcon />
