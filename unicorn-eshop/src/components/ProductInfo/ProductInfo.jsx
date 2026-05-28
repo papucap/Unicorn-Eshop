@@ -4,7 +4,7 @@ import "./ProductInfo.css";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link } from "react-router-dom";
 
-const ProductInfo = ({ product, onBack }) => {
+const ProductInfo = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [msg, setMsg] = useState(null);
   const { addToCart } = useCart();
@@ -28,8 +28,7 @@ const ProductInfo = ({ product, onBack }) => {
     <div className="page">
       
       <div>
-        <button onClick={onBack}> <ArrowBackIcon /> </button>
-      </div>
+        <button onClick={() => window.location.reload()}> <ArrowBackIcon /> </button>      </div>
       <div className="images">
         {product.images.map((img, i) => (
           <img key={i} src={img} alt={product.name} className="img" />
