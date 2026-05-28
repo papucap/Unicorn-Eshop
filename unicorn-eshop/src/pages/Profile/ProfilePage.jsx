@@ -1,16 +1,14 @@
-import Header from '../../components/Header/Header'
-import Profile from '../../components/Profile/Profile'
-import Footer from '../../components/Footer/Footer'
-import './ProfilePage.css'
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import Profile from "../../components/Profile/Profile";
+import "./ProfilePage.css";
 
-const ProfilePage = () => {
+export default function ProfilePage({ lang, setLang }) {
   return (
     <div>
-        <Header/>
-        <Profile/>
-        <Footer/>
+      <Header lang={lang} setLang={setLang} />
+      <Profile lang={lang} />
+      <Footer lang={lang} />
     </div>
-  )
+  );
 }
-
-export default ProfilePage

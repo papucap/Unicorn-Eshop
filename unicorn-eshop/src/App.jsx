@@ -39,9 +39,18 @@ function App() {
         path="/cart/QR"
         element={<QRPage lang={lang} setLang={setLang} />}
       />
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/profile" element={<ProfilePage />} />
-      <Route path="/register" element={<RegistracePage />} />
+      <Route
+        path="/login"
+        element={<LoginPage lang={lang} setLang={setLang} />}
+      />
+      <Route
+        path="/profile"
+        element={<ProfilePage lang={lang} setLang={setLang} />}
+      />
+      <Route
+        path="/register"
+        element={<RegistracePage lang={lang} setLang={setLang} />}
+      />
     </Routes>
   );
 }
