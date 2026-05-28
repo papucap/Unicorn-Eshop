@@ -10,7 +10,7 @@ const ProductPage = ({products, onProductClick}) => {
                 {products.map((product) => (
                     <div 
                         key={product.id} 
-                        className="product-card" 
+                        classNaame="product-card" 
                         onClick={() => onProductClick(product)}
                     >
                         <div className="card-image">
