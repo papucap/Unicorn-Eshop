@@ -1,7 +1,6 @@
 import "./ProductBox.css";
 
 function ProductBox({ title, products = [], lang = "cs" }) {
-  // Výchozí nadpis, pokud žádný nepřijde v props
   const defaultTitles = {
     cs: "Produkty",
     en: "Products",
