@@ -3,8 +3,8 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import XIcon from "@mui/icons-material/X";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import "./Footer.css";
+import { footerTranslations } from "./footerTranslations.js";
 
-// UnorderedList teď přijímá lang a dynamicky vypisuje správný překlad
 function UnorderedList({ className = "", items = [], lang = "cs" }) {
   return (
     <ul className={className}>
@@ -24,30 +24,6 @@ function UnorderedList({ className = "", items = [], lang = "cs" }) {
 }
 
 function Footer({ lang = "cs" }) {
-  // Nadpisy sekcí a statické texty
-  const translations = {
-    infoTitle: { cs: "Informace", en: "Information" },
-    shopTitle: { cs: "Obchod", en: "Shop" },
-    copyright: {
-      cs: "© 2024 Unicorn Eshop. Všechna práva vyhrazena.",
-      en: "© 2024 Unicorn Eshop. All rights reserved.",
-    },
-  };
-
-  const infoLinks = [
-    { label: { cs: "O nás", en: "About Us" }, url: "/about" },
-    { label: { cs: "Kontakt", en: "Contact" }, url: "/contact" },
-    { label: { cs: "Q&A", en: "Q&A" }, url: "/about" },
-    { label: { cs: "Reklamace", en: "Claims" }, url: "/contact" },
-  ];
-
-  const shopLinks = [
-    { label: { cs: "Oblečení", en: "Clothing" }, url: "/products" },
-    { label: { cs: "Boty", en: "Shoes" }, url: "/products" },
-    { label: { cs: "Doplňky", en: "Accessories" }, url: "/products" },
-    { label: { cs: "Novinky", en: "News" }, url: "/" },
-  ];
-
   const socialLinks = [
     {
       icon: <InstagramIcon />,
@@ -74,19 +50,19 @@ function Footer({ lang = "cs" }) {
       </div>
 
       <div className="info-links">
-        <h3>{translations.infoTitle[lang]}</h3>
+        <h3>{footerTranslations.infoTitle[lang]}</h3>
         <UnorderedList
           className="info-links-list"
-          items={infoLinks}
+          items={footerTranslations.infoLinks}
           lang={lang}
         />
       </div>
 
       <div className="shop-links">
-        <h3>{translations.shopTitle[lang]}</h3>
+        <h3>{footerTranslations.shopTitle[lang]}</h3>
         <UnorderedList
           className="shop-links-list"
-          items={shopLinks}
+          items={footerTranslations.shopLinks}
           lang={lang}
         />
       </div>
@@ -100,7 +76,7 @@ function Footer({ lang = "cs" }) {
       </div>
 
       <div className="copyright">
-        <p>{translations.copyright[lang]}</p>
+        <p>{footerTranslations.copyright[lang]}</p>
       </div>
     </footer>
   );
