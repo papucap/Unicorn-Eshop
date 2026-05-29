@@ -6,6 +6,7 @@ import ProductPage from "../../components/ProductPage/ProductPage";
 import { getAllProducts } from "../../api/api";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import './Products.css'
 
 const createSlug = (text) => {
   return text
@@ -28,6 +29,10 @@ export default function Products({ lang, setLang }) {
   const loadingText = {
     cs: "Načítám produkty...",
     en: "Loading products...",
+  };
+  const notFoundText = {
+    cs: "Produkt nenalezen",
+    en: "Product not found",
   };
 
   React.useEffect(() => {
@@ -61,7 +66,7 @@ export default function Products({ lang, setLang }) {
 
       {slug ? (
         loading ? (
-          <p>{loadingText[lang]}</p>
+          <p className="loading-error">{loadingText[lang]}</p>
         ) : selectedProduct ? (
           <ProductInfo 
             lang={lang} 
@@ -69,7 +74,7 @@ export default function Products({ lang, setLang }) {
             onBack={() => navigate(-1)}
           />
         ) : (
-          !loading && <p className="nenalezeno">Produkt nenalezen</p>
+        !loading && <p className="loading-error">{notFoundText[lang]}</p>
         )
       ) : (
         <ProductPage
