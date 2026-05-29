@@ -1,5 +1,6 @@
 .loading-error{
     align-items: center;
+    justify-content: center;
     font-weight: bold;
     font-size: 32px;
 }

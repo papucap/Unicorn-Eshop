@@ -10,10 +10,18 @@ import QRPage from "./pages/Cart/QR/QRPage";
 import ProfilePage from "./pages/Profile/ProfilePage";
 import LoginPage from "./pages/Login/LoginPage";
 import RegistracePage from "./pages/Registrace/RegistracePage";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   // Hlavní stav pro jazyk celého eshopu
   const [lang, setLang] = useState("cs");
+
+  const notFoundMsg = {
+    cs: "Stránka nenalezena (404)",
+    en: "Page not found (404)"
+  };
 
   return (
     <Routes>
@@ -54,6 +62,22 @@ function App() {
       <Route
         path="/register"
         element={<RegistracePage lang={lang} setLang={setLang} />}
+      />
+
+
+      <Route 
+        path="*" 
+        element={
+          <div>
+            <Header />
+            <NavBar />
+            <div style={{ textAlign: "center", padding: "50px"}}>
+              <h1>{notFoundMsg[lang]}</h1>
+              <a href="/">Zpět na hlavní stránku / Back to home</a>
+            </div>
+            <Footer />
+          </div>
+        } 
       />
     </Routes>
   );
