@@ -17,6 +17,7 @@ import NavBar from "./components/NavBar/NavBar";
 function App() {
   // Hlavní stav pro jazyk celého eshopu
   const [lang, setLang] = useState("cs");
+  
 
   const notFoundMsg = {
     cs: "Stránka nenalezena (404)",
@@ -69,13 +70,16 @@ function App() {
         path="*" 
         element={
           <div>
-            <Header />
-            <NavBar />
-            <div style={{ textAlign: "center", padding: "50px"}}>
-              <h1>{notFoundMsg[lang]}</h1>
-              <a href="/">Zpět na hlavní stránku / Back to home</a>
-            </div>
-            <Footer />
+            <Header lang={lang} setLang={setLang} />
+            <NavBar lang={lang} />
+            <div style={{ textAlign: "center", padding: "50px", minHeight: "50vh" }}>
+            <h1>{notFoundMsg[lang]}</h1>
+            <br />
+            <a href="/" style={{fontWeight: "bold" }}>
+              {lang === "cs" ? "← Zpět na hlavní stránku" : "← Back to home"}
+            </a>
+          </div>
+            <Footer lang={lang} />
           </div>
         } 
       />
