@@ -5,6 +5,7 @@ header {
   align-items: center;
   padding: 18px 50px;
   color: white;
+  font-weight: bold;
 }
 
 .links ul {
