@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import ProductInfo from "../../components/ProductInfo/ProductInfo";
 import ProductPage from "../../components/ProductPage/ProductPage";
@@ -7,9 +7,20 @@ import { getAllProducts } from "../../api/api";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
+const createSlug = (text) => {
+  return text
+    .toString()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "");
+};
+
 export default function Products({ lang, setLang }) {
-  const { category } = useParams();
-  const [selectedProduct, setSelectedProduct] = React.useState(null);
+  const { slug, category } = useParams();
+  const navigate = useNavigate();
   const [products, setProducts] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [query, setQuery] = React.useState("");
@@ -24,6 +35,7 @@ export default function Products({ lang, setLang }) {
       .then(setProducts)
       .finally(() => setLoading(false));
   }, []);
+  const selectedProduct = products.find(p => createSlug(p.name) === slug);
 
   const filtered = products.filter((p) => {
     const search =
@@ -47,15 +59,22 @@ export default function Products({ lang, setLang }) {
       <Header lang={lang} setLang={setLang} />
       <NavBar lang={lang} onSearch={setQuery} />
 
-      {selectedProduct ? (
-        <ProductInfo lang={lang} product={selectedProduct} />
-      ) : loading ? (
-        <p>{loadingText[lang]}</p>
+      {slug ? (
+        loading ? (
+          <p>{loadingText[lang]}</p>
+        ) : selectedProduct ? (
+          <ProductInfo 
+            lang={lang} 
+            product={selectedProduct} 
+            onBack={() => navigate(-1)}
+          />
+        ) : (
+          !loading && <p className="nenalezeno">Produkt nenalezen</p>
+        )
       ) : (
         <ProductPage
           lang={lang}
           products={filtered}
-          onProductClick={setSelectedProduct}
         />
       )}
 

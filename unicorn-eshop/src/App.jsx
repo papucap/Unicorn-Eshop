@@ -26,6 +26,10 @@ function App() {
         path="/products/:category"
         element={<Products lang={lang} setLang={setLang} />}
       />
+      <Route 
+        path="/product/:slug" 
+        element={<Products lang={lang} setLang={setLang} />} 
+      />
       <Route
         path="/about"
         element={<AboutUs lang={lang} setLang={setLang} />}

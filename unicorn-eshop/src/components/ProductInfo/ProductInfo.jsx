@@ -4,7 +4,7 @@ import "./ProductInfo.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import { productTranslations } from "./productTranslations";
 
-const ProductInfo = ({ product, lang = "cs" }) => {
+const ProductInfo = ({ product, lang = "cs", onBack }) => {
   const [selectedSize, setSelectedSize] = useState(null);
   const [msg, setMsg] = useState(null);
   const { addToCart } = useCart();
@@ -31,7 +31,7 @@ const ProductInfo = ({ product, lang = "cs" }) => {
     <div className="page">
       
       <div>
-        <button onClick={() => window.location.reload()}>
+        <button onClick= {onBack}>
           {" "}
           <ArrowBackIcon />{" "}
         </button>

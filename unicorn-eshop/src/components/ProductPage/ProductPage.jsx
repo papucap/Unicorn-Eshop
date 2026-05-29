@@ -1,6 +1,18 @@
 import "./ProductPage.css";
+import { Link } from "react-router-dom";
 
-const ProductPage = ({ products, onProductClick, lang = "cs" }) => {
+const createSlug = (text) => {
+  return text
+    .toString()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "");
+};
+
+const ProductPage = ({ products, lang = "cs" }) => {
   const translations = {
     productCount: {
       cs: "produktů",
@@ -21,10 +33,10 @@ const ProductPage = ({ products, onProductClick, lang = "cs" }) => {
 
         <div className="products-rozlozeni">
           {products.map((product) => (
-            <div
-              key={product.id}
+            <Link 
+              to={`/product/${createSlug(product.name)}`} 
+              key={product.id} 
               className="product-card"
-              onClick={() => onProductClick(product)}
             >
               <div className="card-image">
                 <img src={product.images[0]} alt={product.name} />
@@ -41,7 +53,7 @@ const ProductPage = ({ products, onProductClick, lang = "cs" }) => {
                   {product.price.toLocaleString()} {translations.currency[lang]}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
