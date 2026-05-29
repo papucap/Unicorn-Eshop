@@ -3,11 +3,9 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
 import "./ContactCart.css";
-// 📦 Import souboru s překlady (uprav si cestu, pokud ho máš jinde)
 import { cartTranslations } from "../cartTranslations";
 
 export default function ContactCart({ lang = "cs" }) {
-  // Zkrácení cesty k překladům pro tuhle komponentu
   const t = cartTranslations.contactCart;
 
   return (
