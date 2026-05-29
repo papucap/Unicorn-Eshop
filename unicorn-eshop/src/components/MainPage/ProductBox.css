@@ -25,7 +25,6 @@
 
 
 .product {
-  /* 20% je pětina šířky. Odpočítáváme 24px, což je podíl z 30px mezer (gap) mezi kartami */
   width: calc(20% - 24px); 
   min-width: 200px;
   background: white;
@@ -33,6 +32,7 @@
   overflow: hidden;
   transition: 0.25s;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
 }
 
 .product:hover {
